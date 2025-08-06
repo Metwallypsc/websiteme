@@ -38,36 +38,33 @@ const WhoIsThisFor = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2">
-            👨‍💻 Target Audience
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Who This Is For
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My services are designed for organizations and individuals at different stages 
-            of their product journey, from early-stage startups to established enterprises.
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="text-2xl">👨‍💻</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Who This Is For</h2>
+          </div>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Perfect for organizations and individuals at various stages of their journey
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {audiences.map((audience, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 bg-gradient-card border-border/50"
+              className="group hover:shadow-lg transition-all duration-300 border border-slate-200 bg-white"
             >
               <CardContent className="p-6">
                 <div className="text-center">
-                  <div className="p-4 bg-accent/10 rounded-full w-fit mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                  <div className="p-3 bg-blue-50 rounded-lg w-fit mx-auto mb-4">
                     {audience.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="text-sm font-semibold mb-1 text-slate-900">
                     {audience.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {audience.description}
                   </p>
                 </div>

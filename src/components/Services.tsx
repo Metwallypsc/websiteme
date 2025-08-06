@@ -6,7 +6,8 @@ import {
   Users, 
   UserCheck, 
   MessageSquare,
-  ArrowRight 
+  ArrowRight,
+  CheckCircle
 } from "lucide-react";
 
 const Services = () => {
@@ -69,49 +70,44 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2">
-            💼 My Services
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            End-to-End Product Excellence
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From strategy to execution, I provide comprehensive product management services 
-            tailored to your unique business needs and industry requirements.
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="text-2xl">💼</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">My Services</h2>
+          </div>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Comprehensive product management and business analysis services tailored to your needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-2 bg-gradient-card border-border/50"
+              className="group hover:shadow-lg transition-all duration-300 border border-slate-200 bg-white"
             >
               <CardHeader className="pb-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-slate-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
                     {service.icon}
                   </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
-                      {service.subtitle}
-                    </CardDescription>
-                  </div>
+                  <CardTitle className="text-lg mb-2 text-slate-900">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-slate-600 text-sm leading-relaxed">
+                    {service.subtitle}
+                  </CardDescription>
                 </div>
               </CardHeader>
               
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="pt-0">
+                <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <ArrowRight className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                      <span className="text-card-foreground leading-relaxed">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-700 text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>

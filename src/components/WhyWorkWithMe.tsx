@@ -38,41 +38,35 @@ const WhyWorkWithMe = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted to-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2">
-            ✅ Why Choose Me
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Why Work With Me?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            With over 12 years of experience across diverse industries, I bring a unique 
-            combination of technical expertise, business acumen, and human-centered leadership.
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="text-2xl">✅</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Why Work With Me?</h2>
+          </div>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            What sets me apart in the product management and business analysis space
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {advantages.map((advantage, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 bg-gradient-card border-border/50"
-            >
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <div className="p-4 bg-success/10 rounded-full w-fit mx-auto mb-4 group-hover:bg-success/20 transition-colors">
-                    {advantage.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-success transition-colors">
-                    {advantage.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {advantage.description}
-                  </p>
+            <div key={index} className="text-center space-y-4">
+              <div className="flex justify-center">
+                <div className="p-3 bg-yellow-100 rounded-lg w-fit">
+                  {advantage.icon}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold mb-1 text-slate-900">
+                  {advantage.title}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {advantage.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
