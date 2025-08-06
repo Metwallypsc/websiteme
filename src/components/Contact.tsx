@@ -2,19 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl">📩</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">Ready to build something meaningful?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">{t('contactTitle')}</h2>
           </div>
           <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Let's talk about how I can support your product journey — as a service, 
-            as a coach, or as your partner in solving complex problems.
+            {t('contactSubtitle')}
           </p>
         </div>
 
@@ -26,7 +27,7 @@ const Contact = () => {
               onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
             >
               <Mail className="mr-2 h-5 w-5" />
-              Arhmetwally@outlook.com
+              {t('contactEmail')}
             </Button>
             
             <Button 
@@ -36,13 +37,13 @@ const Contact = () => {
               onClick={() => window.open('#', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn Profile
+              {t('linkedinProfile')}
             </Button>
           </div>
 
           <div className="text-center">
             <p className="text-white/80 text-lg font-medium italic">
-              "Your product deserves more than just management — it deserves momentum."
+              {t('quote')}
             </p>
           </div>
         </div>

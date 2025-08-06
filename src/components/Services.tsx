@@ -9,62 +9,65 @@ import {
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: <Briefcase className="h-8 w-8 text-primary" />,
-      title: "Product Management as a Service (PMaaS)",
-      subtitle: "Perfect for startups or growing teams needing experienced leadership without hiring full-time.",
+      title: t('service1Title'),
+      subtitle: t('service1Subtitle'),
       features: [
-        "Own and manage your product roadmap",
-        "Write and prioritize user stories & features",
-        "Facilitate sprint planning and delivery",
-        "Represent your company in technical discussions with vendors or dev teams",
-        "Lead product discovery, validation, and release planning"
+        t('service1Feature1'),
+        t('service1Feature2'),
+        t('service1Feature3'),
+        t('service1Feature4'),
+        t('service1Feature5')
       ]
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: "Business Analysis & Product Documentation",
-      subtitle: "Translate business vision into clear, actionable requirements.",
+      title: t('service2Title'),
+      subtitle: t('service2Subtitle'),
       features: [
-        "BRDs, PRDs, User Stories, Use Cases",
-        "Functional and non-functional specs",
-        "Stakeholder interviews and requirement elicitation",
-        "Support for regulated industries like Digital Government, Insurance, GRC, and Blockchain"
+        t('service2Feature1'),
+        t('service2Feature2'),
+        t('service2Feature3'),
+        t('service2Feature4')
       ]
     },
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      title: "Team Building & Process Design",
-      subtitle: "Build scalable processes and empower your people to deliver.",
+      title: t('service3Title'),
+      subtitle: t('service3Subtitle'),
       features: [
-        "Build and structure in-house product/BA teams",
-        "Create SOPs (Standard Operating Procedures) and SOOs (Sequences of Operations)",
-        "Design scalable operating models for delivery teams",
-        "Agile adoption and continuous improvement guidance"
+        t('service3Feature1'),
+        t('service3Feature2'),
+        t('service3Feature3'),
+        t('service3Feature4')
       ]
     },
     {
       icon: <UserCheck className="h-8 w-8 text-primary" />,
-      title: "Mentorship & Career Coaching for New Professionals",
-      subtitle: "Support for individuals starting in Product or Business Analysis roles.",
+      title: t('service4Title'),
+      subtitle: t('service4Subtitle'),
       features: [
-        "1:1 mentorship and practical onboarding",
-        "Resume building and role readiness support",
-        "Career navigation tips in tech industries",
-        "Personalized feedback on career strategy"
+        t('service4Feature1'),
+        t('service4Feature2'),
+        t('service4Feature3'),
+        t('service4Feature4')
       ]
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-primary" />,
-      title: "Technical Liaison / Product-Vendor Communication",
-      subtitle: "Your trusted voice when working with external dev houses, SaaS vendors, or freelancers.",
+      title: t('service5Title'),
+      subtitle: t('service5Subtitle'),
       features: [
-        "Review proposals and contracts",
-        "Facilitate communication between business and technical stakeholders",
-        "Ensure alignment between your business goals and delivered software"
+        t('service5Feature1'),
+        t('service5Feature2'),
+        t('service5Feature3')
       ]
     }
   ];
@@ -75,10 +78,10 @@ const Services = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl">💼</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">My Services</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('servicesTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Comprehensive product management and business analysis services tailored to your needs
+            {t('servicesSubtitle')}
           </p>
         </div>
 

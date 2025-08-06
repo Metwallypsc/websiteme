@@ -1,34 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <Badge variant="outline" className="mb-6 px-4 py-2 text-primary border-primary/20">
-            12+ Years Experience
+            {t('experience')}
           </Badge>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-slate-900">
-            🚀 Elevate Your Product,
+            {t('heroTitle1')}
             <br />
             <span className="text-primary">
-              Empower Your Team
+              {t('heroTitle2')}
             </span>
           </h1>
           
           <div className="mb-8 space-y-4">
             <p className="text-xl md:text-2xl mb-4 text-slate-700">
-              Hi, I'm <strong>Abdulrhman Metwally</strong>, a seasoned Product Manager, Business Analyst, and 
-              Strategic Consultant with 12+ years of hands-on experience building digital products in 
-              complex industries like GRC, Blockchain, Telecom, Government, and SaaS.
+              {t('heroIntro')}
             </p>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Whether you're launching your first product, scaling a B2B platform, or navigating 
-              enterprise digital transformation — I offer end-to-end expertise to help you deliver 
-              the right solutions, faster.
+              {t('heroDescription')}
             </p>
           </div>
 
@@ -39,7 +37,7 @@ const Hero = () => {
               onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
             >
               <Mail className="mr-2 h-5 w-5" />
-              Get Started Today
+              {t('getStarted')}
               <span className="ml-2">→</span>
             </Button>
             <Button 
@@ -49,7 +47,7 @@ const Hero = () => {
               onClick={() => window.open('#', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
-              View LinkedIn Profile
+              {t('viewLinkedin')}
             </Button>
           </div>
         </div>

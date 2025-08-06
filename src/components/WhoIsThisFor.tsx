@@ -7,33 +7,36 @@ import {
   GraduationCap, 
   Building2 
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhoIsThisFor = () => {
+  const { t } = useLanguage();
+  
   const audiences = [
     {
       icon: <Rocket className="h-8 w-8 text-accent" />,
-      title: "Startups",
-      description: "needing fractional PM leadership"
+      title: t('audience1'),
+      description: t('audience1Desc')
     },
     {
       icon: <Building className="h-8 w-8 text-accent" />,
-      title: "Tech companies",
-      description: "seeking to scale with structure"
+      title: t('audience2'),
+      description: t('audience2Desc')
     },
     {
       icon: <Users className="h-8 w-8 text-accent" />,
-      title: "Agencies",
-      description: "building regulated or high-risk products"
+      title: t('audience3'),
+      description: t('audience3Desc')
     },
     {
       icon: <GraduationCap className="h-8 w-8 text-accent" />,
-      title: "New professionals",
-      description: "entering the BA/Product world"
+      title: t('audience4'),
+      description: t('audience4Desc')
     },
     {
       icon: <Building2 className="h-8 w-8 text-accent" />,
-      title: "Enterprises",
-      description: "transitioning from waterfall to Agile"
+      title: t('audience5'),
+      description: t('audience5Desc')
     }
   ];
 
@@ -43,10 +46,10 @@ const WhoIsThisFor = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl">👨‍💻</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Who This Is For</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('whoTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Perfect for organizations and individuals at various stages of their journey
+            {t('whoSubtitle')}
           </p>
         </div>
 

@@ -4,17 +4,20 @@ import Services from "@/components/Services";
 import WhoIsThisFor from "@/components/WhoIsThisFor";
 import WhyWorkWithMe from "@/components/WhyWorkWithMe";
 import Contact from "@/components/Contact";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Services />
-      <WhoIsThisFor />
-      <WhyWorkWithMe />
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <Services />
+        <WhoIsThisFor />
+        <WhyWorkWithMe />
+        <Contact />
+      </div>
+    </LanguageProvider>
   );
 };
 

@@ -7,33 +7,36 @@ import {
   Trophy, 
   Zap 
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhyWorkWithMe = () => {
+  const { t } = useLanguage();
+  
   const advantages = [
     {
       icon: <Award className="h-8 w-8 text-success" />,
-      title: "Deep industry expertise",
-      description: "From SaaS to Blockchain to GRC"
+      title: t('advantage1'),
+      description: t('advantage1Desc')
     },
     {
       icon: <Heart className="h-8 w-8 text-success" />,
-      title: "Human-first approach",
-      description: "I align teams, not just features"
+      title: t('advantage2'),
+      description: t('advantage2Desc')
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-success" />,
-      title: "Dual fluency",
-      description: "I speak both \"tech\" and \"business\""
+      title: t('advantage3'),
+      description: t('advantage3Desc')
     },
     {
       icon: <Trophy className="h-8 w-8 text-success" />,
-      title: "Proven track record",
-      description: "Delivered successful products in highly complex domains"
+      title: t('advantage4'),
+      description: t('advantage4Desc')
     },
     {
       icon: <Zap className="h-8 w-8 text-success" />,
-      title: "Fast ramp-up",
-      description: "I integrate quickly and deliver value from day one"
+      title: t('advantage5'),
+      description: t('advantage5Desc')
     }
   ];
 
@@ -43,10 +46,10 @@ const WhyWorkWithMe = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl">✅</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Why Work With Me?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('whyTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            What sets me apart in the product management and business analysis space
+            {t('whySubtitle')}
           </p>
         </div>
 
