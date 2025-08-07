@@ -17,16 +17,6 @@ const Header = () => {
           
           <div className="flex items-center gap-3">
             <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
-              className="text-slate-600 hover:text-slate-900"
-            >
-              <Globe className="mr-2 h-4 w-4" />
-              {language === 'en' ? 'العربية' : 'English'}
-            </Button>
-            
-            <Button 
               variant="outline" 
               size="sm"
               onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
@@ -41,6 +31,15 @@ const Header = () => {
             >
               <Linkedin className="mr-2 h-4 w-4" />
               {t('linkedin')}
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              className="text-slate-600 hover:text-slate-900"
+            >
+              <Globe className="mr-2 h-4 w-4" />
+              {language === 'en' ? 'العربية' : 'English'}
             </Button>
           </div>
         </div>

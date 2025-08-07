@@ -33,7 +33,7 @@ const Contact = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-lg"
               onClick={() => window.open('#', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />

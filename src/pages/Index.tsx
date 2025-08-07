@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import WhoIsThisFor from "@/components/WhoIsThisFor";
 import WhyWorkWithMe from "@/components/WhyWorkWithMe";
 import Contact from "@/components/Contact";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
         <WhoIsThisFor />
         <WhyWorkWithMe />
         <Contact />
+        <FloatingWhatsApp />
       </div>
     </LanguageProvider>
   );
