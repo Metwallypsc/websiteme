@@ -27,7 +27,7 @@ const Header = () => {
             <Button 
               size="sm"
               className="bg-black text-white hover:bg-black/90"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
               <Linkedin className="mr-2 h-4 w-4" />
               {t('linkedin')}

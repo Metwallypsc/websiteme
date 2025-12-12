@@ -44,7 +44,7 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               className="border-slate-300 text-slate-700 hover:bg-slate-100 transition-all duration-300"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
               {t('viewLinkedin')}

@@ -34,7 +34,7 @@ const Contact = () => {
               variant="outline" 
               size="lg"
               className="border-white text-white hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-lg"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
               {t('linkedinProfile')}
