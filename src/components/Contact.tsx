@@ -33,7 +33,7 @@ const Contact = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white !text-black hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
+              className="border-white text-blue-600 hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
               onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
               <Linkedin className="mr-2 h-5 w-5" />
