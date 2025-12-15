@@ -36,9 +36,9 @@ const Hero = () => {
               className="bg-primary text-white hover:bg-primary/90 shadow-lg transition-all duration-300"
               onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
             >
-              <Mail className="mr-2 h-5 w-5" />
+              <Mail className="me-2 h-5 w-5" />
               {t('getStarted')}
-              <span className="ml-2">→</span>
+              <span className="ms-2">→</span>
             </Button>
             <Button 
               variant="outline" 
@@ -46,7 +46,7 @@ const Hero = () => {
               className="border-slate-300 text-slate-700 hover:bg-slate-100 transition-all duration-300"
               onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
-              <Linkedin className="mr-2 h-5 w-5" />
+              <Linkedin className="me-2 h-5 w-5" />
               {t('viewLinkedin')}
             </Button>
           </div>

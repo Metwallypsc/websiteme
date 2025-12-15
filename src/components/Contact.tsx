@@ -26,7 +26,7 @@ const Contact = () => {
               className="bg-white text-blue-600 hover:bg-white/90 shadow-lg transition-all duration-300"
               onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
             >
-              <Mail className="mr-2 h-5 w-5" />
+              <Mail className="me-2 h-5 w-5" />
               {t('contactEmail')}
             </Button>
             
@@ -36,7 +36,7 @@ const Contact = () => {
               className="border-white text-blue-600 hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
               onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
-              <Linkedin className="mr-2 h-5 w-5" />
+              <Linkedin className="me-2 h-5 w-5" />
               {t('linkedinProfile')}
             </Button>
           </div>
