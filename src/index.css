@@ -133,3 +133,6 @@
     --tw-space-x-reverse: 1;
   }
 }
+:focus-visible {
+  outline: none !important;
+}
