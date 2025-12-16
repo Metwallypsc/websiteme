@@ -16,7 +16,7 @@ const translations = {
     
     // Hero
     experience: "12+ Years Experience",
-    heroTitle1: "🚀 Elevate Your Product,",
+    heroTitle1: "Elevate Your Product,",
     heroTitle2: "Empower Your Team",
     heroIntro: "Hi, I'm Abdulrhman H. Metwally, a seasoned Product Manager, Business Analyst, and Strategic Consultant with 12+ years of hands-on experience building digital products in complex industries like GRC, Blockchain, Telecom, Government, and SaaS.",
     heroDescription: "Whether you're launching your first product, scaling a B2B platform, or navigating enterprise digital transformation — I offer end-to-end expertise to help you deliver the right solutions, faster.",
@@ -106,7 +106,7 @@ const translations = {
     
     // Hero
     experience: "خبرة تزيد عن ١٢ عاماً",
-    heroTitle1: "🚀 ارتقِ بمنتجك،",
+    heroTitle1: "ارتقِ بمنتجك،",
     heroTitle2: "وحفّز فريقك",
     heroIntro: "مرحباً، أنا عبدالرحمن حسين متولي، مدير منتجات متمرس، محلل أعمال، ومستشار استراتيجي، أمتلك خبرة عملية تزيد عن ١٢ عاماً في تطوير المنتجات الرقمية ضمن قطاعات متخصصة مثل: الحوكمة والامتثال وإدارة المخاطر، البلوك تشين، الاتصالات، القطاع الحكومي، والبرمجيات كخدمة.",
     heroDescription: "سواء كنت تنطلق بمنتجك الأول، أو تتوسع بمنصة أعمال، أو تمر بمرحلة التحول الرقمي المؤسسي - أقدّم لك خبرة متكاملة تساعدك على تقديم الحلول المناسبة بسرعة وكفاءة.",
