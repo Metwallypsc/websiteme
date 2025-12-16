@@ -57,7 +57,7 @@ const WhyWorkWithMe = () => {
           {advantages.map((advantage, index) => (
             <div key={index} className="text-center space-y-4">
               <div className="flex justify-center">
-                <div className="p-3 bg-muted rounded-lg w-fit">
+                <div className="p-3 bg-yellow-100 rounded-lg w-fit">
                   {advantage.icon}
                 </div>
               </div>

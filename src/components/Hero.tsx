@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail,} from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
@@ -43,9 +43,10 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-black text-white hover:bg-black/90 shadow-lg transition-all duration-300"
-              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
+              className="border-slate-300 text-slate-700 hover:bg-slate-100 transition-all duration-300"
+              onClick={() => window.open('#', '_blank')}
             >
+              <Linkedin className="mr-2 h-5 w-5" />
               {t('viewLinkedin')}
             </Button>
           </div>

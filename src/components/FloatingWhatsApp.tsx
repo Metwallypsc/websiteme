@@ -5,7 +5,7 @@ const FloatingWhatsApp = () => {
   const { language } = useLanguage();
   
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/+201112654678', '_blank');
+    window.open('https://wa.me/+201234567890', '_blank');
   };
 
   return (
