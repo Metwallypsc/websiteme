@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const isRTL = language === 'ar';
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
       <div className="container mx-auto px-6 text-center relative z-10">
