@@ -77,7 +77,6 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">💼</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('servicesTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -108,7 +107,7 @@ const Services = () => {
               <CardContent className="pt-0">
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="service-feature flex items-start gap-2">
+                    <li key={featureIndex} className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <span className="text-slate-700 text-sm leading-relaxed">{feature}</span>
                     </li>

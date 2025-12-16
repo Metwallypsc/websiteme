@@ -9,10 +9,14 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">🚀</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Abdulrhman Metwally</span>
+            <img
+  src="/logo.svg"
+  alt="Logo"
+  loading="eager"
+  decoding="async"
+  draggable={false}
+  className="h-10 w-auto max-w-[160px] object-contain select-none"
+/>
           </div>
           
           <div className="flex items-center gap-3">
@@ -27,7 +31,7 @@ const Header = () => {
             <Button 
               size="sm"
               className="bg-black text-white hover:bg-black/90"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
               <Linkedin className="mr-2 h-4 w-4" />
               {t('linkedin')}
