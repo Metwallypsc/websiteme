@@ -13,6 +13,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
   const { t } = useLanguage();
+  const isRTL = language === 'ar';
   
   const services = [
     {
@@ -107,7 +108,10 @@ const Services = () => {
               <CardContent className="pt-0">
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2">
+                    <li
+  key={featureIndex}
+  className={`flex items-start gap-2 ${isRTL ? "flex-row-reverse text-right" : "flex-row"}`}
+>
                       <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <span className="text-slate-700 text-sm leading-relaxed">{feature}</span>
                     </li>
