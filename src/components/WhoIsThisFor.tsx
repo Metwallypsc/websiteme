@@ -45,7 +45,6 @@ const WhoIsThisFor = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">👨‍💻</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('whoTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">

@@ -45,7 +45,6 @@ const WhyWorkWithMe = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">✅</span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">{t('whyTitle')}</h2>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -57,7 +56,7 @@ const WhyWorkWithMe = () => {
           {advantages.map((advantage, index) => (
             <div key={index} className="text-center space-y-4">
               <div className="flex justify-center">
-                <div className="p-3 bg-yellow-100 rounded-lg w-fit">
+                <div className="p-3 bg-muted rounded-lg w-fit">
                   {advantage.icon}
                 </div>
               </div>

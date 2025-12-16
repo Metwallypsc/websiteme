@@ -11,7 +11,6 @@ const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl">📩</span>
             <h2 className="text-2xl md:text-3xl font-bold text-white">{t('contactTitle')}</h2>
           </div>
           <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
