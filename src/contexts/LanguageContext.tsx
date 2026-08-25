@@ -17,6 +17,7 @@ const translations = {
     navContact: "Contact",
     contact: "Contact",
     linkedin: "LinkedIn",
+    github: "GitHub",
     
     // Hero
     experience: "12+ Years Experience",
@@ -111,6 +112,7 @@ const translations = {
     navContact: "تواصل معي",
     contact: "تواصل معي",
     linkedin: "لينكدإن",
+    github: "جيت هاب",
     
     // Hero
     experience: "خبرة تزيد عن ١٢ عاماً",

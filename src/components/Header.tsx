@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Globe } from "lucide-react";
+import { Mail, Linkedin, Github, Globe } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -66,6 +66,16 @@ const Header = () => {
             >
               <Linkedin className="h-4 w-4" />
               {t("linkedin")}
+            </Button>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.open("https://github.com/Metwallypsc?tab=repositories", "_blank", "noopener,noreferrer")}
+              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
+            >
+              <Github className="h-4 w-4" />
+              {t("github")}
             </Button>
 
             <Button
