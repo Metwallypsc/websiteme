@@ -11,6 +11,10 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Header
+    navHome: "Home",
+    navAbout: "About",
+    navServices: "Services",
+    navContact: "Contact",
     contact: "Contact",
     linkedin: "LinkedIn",
     
@@ -101,6 +105,10 @@ const translations = {
   },
   ar: {
     // Header
+    navHome: "الرئيسية",
+    navAbout: "من أنا",
+    navServices: "الخدمات",
+    navContact: "تواصل معي",
     contact: "تواصل معي",
     linkedin: "لينكدإن",
     
