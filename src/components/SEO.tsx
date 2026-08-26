@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/data/structuredData";
@@ -19,8 +20,20 @@ const SEO = ({ title, description, path, image, noindex, jsonLd }: SEOProps) => 
   const fullTitle = path === "/" ? title : `${title} | ${SITE_NAME}`;
   const jsonLdList = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
+  // react-helmet-async bakes the correct <title>/<html lang/dir> into each
+  // prerendered page (verified in the production build), but doesn't
+  // reliably re-apply them to the live DOM on client-side route changes -
+  // set them directly so the browser tab title and lang/dir stay correct
+  // while navigating the SPA, not just on the initial load of a page.
+  useEffect(() => {
+    document.title = fullTitle;
+    document.documentElement.setAttribute("lang", language);
+    document.documentElement.setAttribute("dir", dir);
+  }, [fullTitle, language, dir]);
+
   return (
-    <Helmet htmlAttributes={{ lang: language, dir }}>
+    <Helmet>
+      <html lang={language} dir={dir} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />

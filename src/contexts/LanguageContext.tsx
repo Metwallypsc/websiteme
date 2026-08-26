@@ -117,6 +117,21 @@ const translations = {
     advantage5: "Fast ramp-up",
     advantage5Desc: "I integrate quickly and deliver value from day one",
     
+    // Footer
+    footerTagline: "Product Manager · Business Analyst · Strategic Consultant",
+    footerBlurb: "Helping teams build the right products, faster — with 13+ years across GRC, SaaS, telecom, blockchain & government.",
+    footerNavigate: "Navigate",
+    footerServicesHeading: "Services",
+    footerService1: "Product Mgmt (PMaaS)",
+    footerService2: "Business Analysis",
+    footerService3: "Team Building",
+    footerService4: "Mentorship & Coaching",
+    footerService5: "Technical Liaison",
+    footerGetInTouch: "Get in touch",
+    footerLocation: "Cairo, Egypt",
+    footerCopyrightName: "Abdulrhman H. Metwally. All rights reserved.",
+    footerBackToTop: "Back to top",
+
     // 404
     notFoundTitle: "Page not found",
     notFoundText: "The page you're looking for doesn't exist or may have moved.",
@@ -254,6 +269,21 @@ const translations = {
 
 	advantage5: "سرعة اندماج وتأثير مباشر",
 	advantage5Desc: "تحقيق قيمة ملموسة منذ اليوم الأول دون منحنى تعلّم طويل",
+
+	// Footer
+	footerTagline: "مدير منتج · محلل أعمال · مستشار استراتيجي",
+	footerBlurb: "بساعد الفرق تبني المنتج الصح وبسرعة — بخبرة 13+ سنة في GRC وSaaS والاتصالات والبلوك تشين والقطاع الحكومي.",
+	footerNavigate: "التنقل",
+	footerServicesHeading: "الخدمات",
+	footerService1: "إدارة المنتجات (PMaaS)",
+	footerService2: "تحليل الأعمال",
+	footerService3: "بناء الفرق",
+	footerService4: "الإرشاد والتوجيه",
+	footerService5: "الوساطة التقنية",
+	footerGetInTouch: "تواصل معي",
+	footerLocation: "القاهرة، مصر",
+	footerCopyrightName: "عبدالرحمن حسين متولي. جميع الحقوق محفوظة.",
+	footerBackToTop: "للأعلى",
 
 	// 404
 	notFoundTitle: "الصفحة غير موجودة",
