@@ -1,18 +1,38 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import About from "@/components/About";
+import SEO from "@/components/SEO";
+import { personJsonLd, webPageJsonLd } from "@/data/structuredData";
 
-const About = () => {
-  const { t } = useLanguage();
+const TITLE = "About Abdulrhman Metwally";
+const DESCRIPTION =
+  "13+ years as a Senior Product Manager and Business Analyst - building product and BA functions from zero, reviving stalled platforms, and shipping enterprise software to government ministries and global clients.";
 
+const AboutPage = () => {
   return (
-    <main className="pt-20">
-      <div className="container mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4">{t("navAbout")}</h1>
-        <p className="text-slate-600 max-w-3xl">
-          محتوى صفحة "من أنا" هيتحط هنا.
-        </p>
-      </div>
+    <main id="main-content" className="pt-20">
+      <SEO
+        title={TITLE}
+        description={DESCRIPTION}
+        path="/about"
+        jsonLd={[
+          personJsonLd,
+          {
+            "@type": "ProfilePage",
+            mainEntity: { "@id": "https://arhmetwally.com/#person" },
+            ...webPageJsonLd({
+              name: TITLE,
+              description: DESCRIPTION,
+              path: "/about",
+              breadcrumb: [
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+              ],
+            }),
+          },
+        ]}
+      />
+      <About />
     </main>
   );
 };
 
-export default About;
+export default AboutPage;

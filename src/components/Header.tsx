@@ -1,14 +1,24 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github, Globe } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Mail, Linkedin, Github, Globe, Menu } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PERSON_EMAIL, LINKEDIN_URL } from "@/data/structuredData";
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
     { to: "/", label: t("navHome") },
     { to: "/about", label: t("navAbout") },
+    { to: "/cv", label: t("navCV") },
     { to: "/services", label: t("navServices") },
     { to: "/contact", label: t("navContact") },
   ];
@@ -21,7 +31,9 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2">
             <img
               src="/logo.svg"
-              alt="Logo"
+              alt="Abdulrhman Metwally"
+              width={169}
+              height={40}
               loading="eager"
               decoding="async"
               draggable={false}
@@ -30,7 +42,7 @@ const Header = () => {
           </Link>
 
           {/* Nav Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <nav aria-label="Primary" className="hidden md:flex items-center gap-6 text-sm font-medium">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -51,7 +63,7 @@ const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => window.open("mailto:example@email.com", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(`mailto:${PERSON_EMAIL}`, "_blank", "noopener,noreferrer")}
               className="text-slate-600 hover:text-slate-900"
             >
               <Mail className="h-4 w-4" />
@@ -61,7 +73,7 @@ const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => window.open("https://linkedin.com", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(LINKEDIN_URL, "_blank", "noopener,noreferrer")}
               className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
               <Linkedin className="h-4 w-4" />
@@ -87,6 +99,43 @@ const Header = () => {
               <Globe className="h-4 w-4" />
               {language === "en" ? "العربية" : "English"}
             </Button>
+
+            {/* Mobile menu */}
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="md:hidden text-slate-600 hover:text-slate-900"
+                  aria-label={language === "ar" ? "افتح قائمة التنقل" : "Open navigation menu"}
+                >
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side={language === "ar" ? "left" : "right"}>
+                <SheetTitle className="sr-only">
+                  {language === "ar" ? "قائمة التنقل" : "Navigation menu"}
+                </SheetTitle>
+                <nav aria-label="Mobile" className="flex flex-col gap-1 mt-8">
+                  {navItems.map((item) => (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setMobileOpen(false)}
+                      className={({ isActive }) =>
+                        `px-3 py-3 rounded-lg text-base font-medium ${
+                          isActive
+                            ? "bg-blue-50 text-blue-700"
+                            : "text-slate-700 hover:bg-slate-50"
+                        }`
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

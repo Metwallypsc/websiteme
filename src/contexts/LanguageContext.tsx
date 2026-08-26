@@ -15,19 +15,23 @@ const translations = {
     navAbout: "About",
     navServices: "Services",
     navContact: "Contact",
+    navCV: "My CV",
     contact: "Contact",
     linkedin: "LinkedIn",
     github: "GitHub",
     
     // Hero
-    experience: "12+ Years Experience",
+    experience: "13+ Years Experience",
     heroTitle1: "Elevate Your Product,",
     heroTitle2: "Empower Your Team",
-    heroIntro: "Hi, I'm Abdulrhman H. Metwally, a seasoned Product Manager, Business Analyst, and Strategic Consultant with 12+ years of hands-on experience building digital products in complex industries like GRC, Blockchain, Telecom, Government, and SaaS.",
+    heroIntro: "Hi, I'm Abdulrhman H. Metwally, a seasoned Product Manager, Business Analyst, and Strategic Consultant with 13+ years of hands-on experience building digital products in complex industries like GRC, Blockchain, Telecom, Government, and SaaS.",
     heroDescription: "Whether you're launching your first product, scaling a B2B platform, or navigating enterprise digital transformation — I offer end-to-end expertise to help you deliver the right solutions, faster.",
     getStarted: "Get Started Today",
     viewLinkedin: "View LinkedIn Profile",
     
+    // Services page header
+    servicesPageH1: "Product Management & Business Analysis Services",
+
     // Services
     servicesTitle: "My Services",
     servicesSubtitle: "Comprehensive product management and business analysis services tailored to your needs",
@@ -67,6 +71,22 @@ const translations = {
     service5Feature2: "Facilitate communication between business and technical stakeholders",
     service5Feature3: "Ensure alignment between your business goals and delivered software",
     
+    // FAQ (Services page)
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Common questions before we start working together",
+    faq1Q: "What is Product Management as a Service (PMaaS)?",
+    faq1A: "It's fractional product leadership: you get an experienced PM owning your roadmap, backlog, and delivery without the cost or commitment of a full-time hire - ideal for startups and growing teams that need senior leadership part-time.",
+    faq2Q: "Do you work remotely with international clients?",
+    faq2A: "Yes. My last three roles (TAM, PSC, Futira) were fully remote, and I've delivered products for clients and government entities in Saudi Arabia, Egypt, the UAE, Qatar, and Iraq.",
+    faq3Q: "What industries do you specialize in?",
+    faq3A: "Governance, Risk & Compliance (GRC), Business Continuity, GovTech, SaaS, Telecom, HR Tech, and Blockchain - all backed by shipped, production products, not just theory.",
+    faq4Q: "Can you build a product or business-analysis team from scratch?",
+    faq4A: "Yes. At PSC I built the Business Analysis function from zero - hiring and mentoring dozens of analysts and introducing peer-review and documentation standards that measurably cut developer rework.",
+    faq5Q: "What's the engagement model - full-time, part-time, or project-based?",
+    faq5A: "Whatever fits: fractional PMaaS on a part-time retainer, a fixed-scope consulting engagement, or full ownership of a product from discovery through delivery.",
+    faq6Q: "Have you worked with government clients before?",
+    faq6A: "Yes - products and systems I've led are deployed across 5+ government ministries and entities, including Saudi Arabia's Ministry of Culture, Ministry of Commerce, Ministry of Justice, the UAE's Abu Dhabi Accountability Authority, and Madinah Municipality.",
+
     // Who This Is For
     whoTitle: "Who This Is For",
     whoSubtitle: "Perfect for organizations and individuals at various stages of their journey",
@@ -97,6 +117,25 @@ const translations = {
     advantage5: "Fast ramp-up",
     advantage5Desc: "I integrate quickly and deliver value from day one",
     
+    // 404
+    notFoundTitle: "Page not found",
+    notFoundText: "The page you're looking for doesn't exist or may have moved.",
+    notFoundCta: "Back to homepage",
+
+    // About page
+    aboutHeading: "About Me",
+    aboutIntro: "I'm Abdulrhman H. Metwally, a Senior Product Manager, Product Owner, and Business Analyst with 13+ years turning enterprise software ideas into products that actually ship — across GRC, Business Continuity, GovTech, SaaS, Telecom, HR Tech, and Blockchain.",
+    aboutP1: "My path started in software sales and business analysis, and grew into leading cross-functional teams of up to 35 people across Saudi Arabia and Egypt — including fully remote setups. I've built product and business-analysis functions from zero, revived platforms that had stalled, and carried several products from a blank page to production, including systems deployed inside government ministries and public entities.",
+    aboutP2: "I care about the full lifecycle: discovery, roadmap, backlog, prototyping, delivery — not just writing requirements and walking away. Day to day that means Agile/Scrum leadership, stakeholder management up to C-level and government decision-makers, and enough technical fluency (from Figma prototypes to blockchain smart contracts) to work directly with engineering rather than through a translator.",
+    aboutHighlightsTitle: "A few numbers that sum it up",
+    aboutCtaTitle: "Want the full picture?",
+    aboutCtaText: "The complete work history — every role, product, and client — lives on my CV page. Or jump straight to the services I offer.",
+    aboutCtaCv: "View full CV",
+    aboutCtaServices: "See services",
+
+    // Contact page header
+    contactPageH1: "Contact",
+
     // Contact
     contactTitle: "Ready to build something meaningful?",
     contactSubtitle: "Let's talk about how I can support your product journey — as a service, as a coach, or as your partner in solving complex problems.",
@@ -110,19 +149,23 @@ const translations = {
     navAbout: "من أنا",
     navServices: "الخدمات",
     navContact: "تواصل معي",
+    navCV: "سيرتي الذاتية",
     contact: "تواصل معي",
     linkedin: "لينكدإن",
     github: "جيت هاب",
     
     // Hero
-    experience: "خبرة تزيد عن ١٢ عاماً",
+    experience: "خبرة تزيد عن ١٣ عاماً",
     heroTitle1: "ارتقِ بمنتجك،",
     heroTitle2: "وحرّك طاقات فريقك نحو التميّز",
-    heroIntro: "مرحباً، أنا عبدالرحمن حسين متولي، مدير منتجات ومحلل أعمال ومستشار استراتيجي بخبرة عملية تزيد عن ١٢ عاماً في تطوير المنتجات الرقمية ضمن قطاعات متخصصة تشمل: الحوكمة والامتثال، إدارة المخاطر، البلوك تشين، الاتصالات، القطاع الحكومي، والبرمجيات كخدمة (SaaS).",
+    heroIntro: "مرحباً، أنا عبدالرحمن حسين متولي، مدير منتجات ومحلل أعمال ومستشار استراتيجي بخبرة عملية تزيد عن ١٣ عاماً في تطوير المنتجات الرقمية ضمن قطاعات متخصصة تشمل: الحوكمة والامتثال، إدارة المخاطر، البلوك تشين، الاتصالات، القطاع الحكومي، والبرمجيات كخدمة (SaaS).",
     heroDescription: "سواء كنت تطلق منتجك الأول، توسّع منصة أعمالك، أو تقود تحولك الرقمي المؤسسي، أقدّم لك خبرة متكاملة وحلول عملية تساعدك على الإنجاز بسرعة وكفاءة.",
     getStarted: "ابدأ رحلتك الآن",
     viewLinkedin: "اطلع على ملفي الشخصي",
     
+    // Services page header
+    servicesPageH1: "خدمات إدارة المنتجات وتحليل الأعمال",
+
     // Services
     servicesTitle: "الخدمات التي أقدمها",
     servicesSubtitle: "حلول شاملة في إدارة المنتجات وتحليل الأعمال، مصمّمة خصيصاً لاحتياجاتك",
@@ -162,6 +205,22 @@ const translations = {
     service5Feature2: "تسهيل التواصل بين الفريق التقني وأصحاب المصلحة",
     service5Feature3: "ضمان مواءمة الأهداف التجارية مع المخرجات التقنية",
     
+    // FAQ (Services page)
+    faqTitle: "أسئلة شائعة",
+    faqSubtitle: "أسئلة بيسألها العملاء قبل ما نبدأ نشتغل مع بعض",
+    faq1Q: "إيه هي إدارة المنتجات كخدمة (PMaaS)؟",
+    faq1A: "قيادة منتج بدوام جزئي: بتحصل على مدير منتج متمرس يدير خارطة الطريق والباكلوج والتسليم من غير تكلفة أو التزام توظيف دائم — مناسبة جدًا للشركات الناشئة والفرق النامية اللي محتاجة قيادة أساسية بدوام جزئي.",
+    faq2Q: "بتشتغل عن بعد مع عملاء دوليين؟",
+    faq2A: "أيوه. آخر 3 وظائف لي (TAM، PSC، Futira) كانت عن بعد بالكامل، وسلّمت منتجات لعملاء وجهات حكومية في السعودية ومصر والإمارات وقطر والعراق.",
+    faq3Q: "إيه القطاعات اللي بتتخصص فيها؟",
+    faq3A: "الحوكمة والمخاطر والالتزام (GRC)، استمرارية الأعمال، الحكومة الرقمية، SaaS، الاتصالات، الموارد البشرية، والبلوكشين — كلها مدعومة بمنتجات فعلية اتشحنت، مش نظري بس.",
+    faq4Q: "تقدر تبني فريق منتج أو تحليل أعمال من الصفر؟",
+    faq4A: "أيوه. في PSC بنيت وظيفة تحليل الأعمال من الصفر — وظفت ودرّبت عشرات المحللين، وأدخلت معايير مراجعة الأقران والتوثيق اللي قلّلت إعادة العمل عند المطورين بشكل ملموس.",
+    faq5Q: "إيه نموذج التعامل — دوام كامل، جزئي، ولا بالمشروع؟",
+    faq5A: "على حسب احتياجك: PMaaS بدوام جزئي، أو مشاركة استشارية بنطاق محدد، أو ملكية كاملة للمنتج من الاستكشاف للتسليم.",
+    faq6Q: "اشتغلت قبل كده مع عملاء حكوميين؟",
+    faq6A: "أيوه — منتجات وأنظمة قدتها مطبّقة في أكثر من 5 وزارات وجهات حكومية، منها وزارة الثقافة ووزارة التجارة ووزارة العدل السعودية، وديوان المحاسبة بأبوظبي، وأمانة المدينة المنورة.",
+
     // Who This Is For
     whoTitle: "الفئات المستفيدة",
     whoSubtitle: "حلول مصمّمة بعناية لدعم الشركات والأفراد في مراحل مختلفة من النمو والتحوّل.",
@@ -195,6 +254,25 @@ const translations = {
 
 	advantage5: "سرعة اندماج وتأثير مباشر",
 	advantage5Desc: "تحقيق قيمة ملموسة منذ اليوم الأول دون منحنى تعلّم طويل",
+
+	// 404
+	notFoundTitle: "الصفحة غير موجودة",
+	notFoundText: "الصفحة اللي بتدور عليها مش موجودة أو ممكن تكون اتنقلت.",
+	notFoundCta: "ارجع للصفحة الرئيسية",
+
+	// About page
+	aboutHeading: "من أنا",
+	aboutIntro: "أنا عبدالرحمن حسين متولي، مدير منتجات أول ومحلل أعمال بخبرة تتجاوز 13 سنة في تحويل أفكار أنظمة المؤسسات إلى منتجات تُشحن فعليًا — في مجالات الحوكمة والمخاطر والالتزام، استمرارية الأعمال، الحكومة الرقمية، SaaS، الاتصالات، الموارد البشرية، والبلوكشين.",
+	aboutP1: "بدأت مسيرتي في مبيعات البرمجيات وتحليل الأعمال، وتطورت لقيادة فرق متعددة التخصصات وصلت إلى 35 فردًا في السعودية ومصر، بما في ذلك فرق عن بعد بالكامل. بنيت وظائف المنتج وتحليل الأعمال من الصفر، وأحييت منصات كانت متوقفة، وأوصلت عدة منتجات من فكرة على الورق إلى الإنتاج الفعلي، بما فيها أنظمة مطبَّقة داخل وزارات وجهات حكومية.",
+	aboutP2: "أهتم بدورة حياة المنتج كاملة: الاستكشاف، خريطة الطريق، الباكلوج، النماذج، والتسليم — مش بس كتابة المتطلبات والانصراف. يوميًا ده معناه قيادة أجايل/سكرم، وإدارة أصحاب المصلحة حتى مستوى الإدارة التنفيذية وصنّاع القرار الحكوميين، وقدرة تقنية كافية (من نماذج Figma لعقود البلوكشين الذكية) للعمل مباشرة مع فرق الهندسة من غير وسيط.",
+	aboutHighlightsTitle: "أرقام تلخص المشوار",
+	aboutCtaTitle: "عايز الصورة كاملة؟",
+	aboutCtaText: "تاريخ العمل الكامل — كل دور ومنتج وعميل — موجود في صفحة السيرة الذاتية. أو روح مباشرة على الخدمات اللي أقدمها.",
+	aboutCtaCv: "شوف السيرة الذاتية كاملة",
+	aboutCtaServices: "شوف الخدمات",
+
+	// Contact page header
+	contactPageH1: "تواصل معي",
 
 	// Contact
 	contactTitle: "هل أنت مستعد لبناء منتج قوي؟",

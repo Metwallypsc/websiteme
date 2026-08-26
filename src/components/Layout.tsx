@@ -7,6 +7,9 @@ const Layout = () => {
   return (
     <LanguageProvider>
       <div className="min-h-screen">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Header />
         <Outlet />
         <FloatingWhatsApp />
