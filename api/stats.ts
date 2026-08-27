@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { COOKIE_NAME, parseCookies, verifySessionToken } from "./_lib/auth";
-import { getDb } from "./_lib/db";
+import { COOKIE_NAME, parseCookies, verifySessionToken } from "./_lib/auth.js";
+import { getDb } from "./_lib/db.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
