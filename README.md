@@ -71,3 +71,37 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Environment variables
+
+Copy `.env.example` to `.env` for local development, or add the same keys
+under Vercel's Project -> Settings -> Environment Variables for deployment.
+Never commit a real `.env` file.
+
+| Variable | Used for |
+| --- | --- |
+| `DATABASE_URL` | Admin panel visitor counter (Neon Postgres) |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | `/admin` login |
+| `ADMIN_SESSION_SECRET` | Signs the admin session cookie |
+| `VITE_CALENDLY_URL` | "Book a call" popup + inline embed on `/contact` |
+| `RESEND_API_KEY` | Sends the contact form's email notification |
+| `RESEND_FROM_EMAIL` | Optional - sender address once a domain is verified with Resend |
+| `VITE_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Contact form spam protection (Cloudflare Turnstile) |
+
+### Testing the contact form + booking locally
+
+The client (`npm run dev`) runs fine without a backend, but the `/api/*`
+serverless functions only run on Vercel - `npm run dev` alone can't execute
+them. To test the contact form's actual submission and the admin panel
+locally, use the Vercel CLI instead:
+
+```sh
+npm i -g vercel
+vercel link      # first time only, links this folder to your Vercel project
+vercel env pull .env.local
+vercel dev
+```
+
+Without a backend running, the contact form and booking button still work
+for everything except the final submit/email step (booking, validation, and
+the honeypot/captcha UI all run client-side).

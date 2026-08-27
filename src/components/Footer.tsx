@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Mail, MapPin, Globe, ArrowUp } from "lucide-react";
+import { Linkedin, Github, Mail, MapPin, Globe, ArrowUp, CalendarClock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PERSON_EMAIL, LINKEDIN_URL, GITHUB_URL } from "@/data/structuredData";
+import { openCalendlyPopup } from "@/lib/calendly";
+import { trackEvent } from "@/lib/analytics";
 
 const Footer = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -24,6 +26,11 @@ const Footer = () => {
   ];
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const handleBookCall = () => {
+    trackEvent("book_a_call_click", { source: "footer" });
+    void openCalendlyPopup(language);
+  };
 
   return (
     <footer className="relative bg-slate-900 text-slate-300">
@@ -114,6 +121,15 @@ const Footer = () => {
             <h4 className="text-white text-sm font-bold uppercase tracking-wide mb-5">
               {t("footerGetInTouch")}
             </h4>
+            <div className="flex items-start gap-2.5 text-sm mb-3.5">
+              <CalendarClock className="h-[17px] w-[17px] text-success mt-0.5 shrink-0" />
+              <button
+                onClick={handleBookCall}
+                className="text-slate-300 hover:text-white transition-colors text-start"
+              >
+                {t("bookACall")}
+              </button>
+            </div>
             <div className="flex items-start gap-2.5 text-sm mb-3.5">
               <Mail className="h-[17px] w-[17px] text-success mt-0.5 shrink-0" />
               <a href={`mailto:${PERSON_EMAIL}`} className="text-slate-300 hover:text-white transition-colors break-all">

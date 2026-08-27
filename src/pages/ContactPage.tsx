@@ -1,4 +1,6 @@
-import Contact from "@/components/Contact";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import ContactFormSection from "@/components/ContactFormSection";
 import SEO from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personJsonLd, webPageJsonLd, PERSON_EMAIL } from "@/data/structuredData";
@@ -9,6 +11,17 @@ const DESCRIPTION =
 
 const ContactPage = () => {
   const { t } = useLanguage();
+  const { hash } = useLocation();
+
+  // React Router doesn't scroll to hash targets on navigation by itself -
+  // used by the "Send a message" link on the closing CTA (/contact#contact-form).
+  useEffect(() => {
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }, [hash]);
+
   return (
     <main id="main-content" className="pt-20">
       <SEO
@@ -38,7 +51,7 @@ const ContactPage = () => {
         ]}
       />
       <h1 className="sr-only">{t("contactPageH1")}</h1>
-      <Contact />
+      <ContactFormSection />
     </main>
   );
 };

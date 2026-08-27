@@ -9,7 +9,8 @@ import {
 import { Mail, Linkedin, Github, Globe, Menu } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { PERSON_EMAIL, LINKEDIN_URL } from "@/data/structuredData";
+import { LINKEDIN_URL } from "@/data/structuredData";
+import BookCallButton from "@/components/BookCallButton";
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -60,14 +61,22 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
+            <BookCallButton
+              source="header"
+              size="sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+            />
+
             <Button
+              asChild
               variant="outline"
               size="sm"
-              onClick={() => window.open(`mailto:${PERSON_EMAIL}`, "_blank", "noopener,noreferrer")}
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
-              <Mail className="h-4 w-4" />
-              {t("contact")}
+              <Link to="/contact">
+                <Mail className="h-4 w-4" />
+                {t("contact")}
+              </Link>
             </Button>
 
             <Button

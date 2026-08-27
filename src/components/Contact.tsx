@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin, ArrowRight } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import BookCallButton from "@/components/BookCallButton";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -20,23 +20,22 @@ const Contact = () => {
 
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
-              size="lg" 
+            <BookCallButton
+              source="home_closing_cta"
+              size="lg"
               className="bg-white text-blue-600 hover:bg-white/90 shadow-lg transition-all duration-300"
-              onClick={() => window.open('mailto:Arhmetwally@outlook.com', '_blank')}
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              {t('contactEmail')}
-            </Button>
-            
-            <Button 
-              variant="outline" 
+            />
+
+            <Button
+              asChild
+              variant="outline"
               size="lg"
               className="border-white text-blue-600 hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
-              onClick={() => window.open('https://www.linkedin.com/in/abdulrhman-metwally/', '_blank')}
             >
-              <Linkedin className="mr-2 h-5 w-5" />
-              {t('linkedinProfile')}
+              <Link to="/contact#contact-form">
+                <MessageSquare className="mr-2 h-5 w-5" />
+                {t('sendMessage')}
+              </Link>
             </Button>
           </div>
 
