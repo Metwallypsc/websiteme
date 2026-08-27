@@ -38,7 +38,7 @@ const Header = () => {
               loading="eager"
               decoding="async"
               draggable={false}
-              className="h-10 w-auto max-w-[160px] object-contain select-none"
+              className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[160px] object-contain select-none"
             />
           </Link>
 
@@ -103,7 +103,7 @@ const Header = () => {
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
               <Globe className="h-4 w-4" />
               {language === "en" ? "العربية" : "English"}
@@ -143,6 +143,18 @@ const Header = () => {
                     </NavLink>
                   ))}
                 </nav>
+
+                <div className="mt-6 pt-6 border-t border-border/50">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setLanguage(language === "en" ? "ar" : "en")}
+                    className="w-full justify-center text-slate-600 hover:text-slate-900"
+                  >
+                    <Globe className="h-4 w-4" />
+                    {language === "en" ? "العربية" : "English"}
+                  </Button>
+                </div>
               </SheetContent>
             </Sheet>
           </div>

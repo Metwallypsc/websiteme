@@ -160,7 +160,7 @@ const CV = () => {
                 <div className="text-base font-bold mb-4 text-slate-900">{pick(g.title)}</div>
                 <div className="flex flex-wrap gap-2">
                   {g.items.map((item, ii) => (
-                    <span key={ii} className="text-[13px] font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-1.5 whitespace-nowrap">
+                    <span key={ii} className="text-[13px] font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-1.5">
                       {item}
                     </span>
                   ))}
@@ -213,7 +213,7 @@ const CV = () => {
             </p>
             <div className="flex flex-wrap gap-2">
               {CV_COURSES.map((c, i) => (
-                <span key={i} className="text-[13px] font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-1.5 whitespace-nowrap">
+                <span key={i} className="text-[13px] font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-1.5">
                   {c}
                 </span>
               ))}
@@ -226,7 +226,7 @@ const CV = () => {
           <div className="text-lg font-bold mb-4 text-slate-900">{t.coreTitle}</div>
           <div className="flex flex-wrap gap-2">
             {CV_CORE.map((c, i) => (
-              <span key={i} className="text-[13px] font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-1.5 whitespace-nowrap">
+              <span key={i} className="text-[13px] font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-1.5">
                 {c}
               </span>
             ))}
