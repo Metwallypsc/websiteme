@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Secrets - never commit real values, only .env.example
+.env
+.env.local
+.env.*.local
+.vercel
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

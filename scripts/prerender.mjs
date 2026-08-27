@@ -32,6 +32,12 @@ const routes = [
   { url: "/cv", outFile: "cv/index.html" },
   { url: "/services", outFile: "services/index.html" },
   { url: "/contact", outFile: "contact/index.html" },
+  // Prerendered so a direct visit/refresh resolves to a real file instead of
+  // a 404 - always renders logged-out (no cookies exist at build time), the
+  // client-side auth check takes over after hydration. Kept out of the
+  // sitemap and tagged noindex in the page itself.
+  { url: "/admin", outFile: "admin/index.html" },
+  { url: "/admin/dashboard", outFile: "admin/dashboard/index.html" },
   { url: "/__prerender_404__", outFile: "404.html" },
 ];
 

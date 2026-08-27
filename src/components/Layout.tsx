@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Outlet } from "react-router-dom";
+import { trackVisit } from "@/lib/adminApi";
 
 const Layout = () => {
+  useEffect(() => {
+    trackVisit();
+  }, []);
+
   return (
     <LanguageProvider>
       <div className="min-h-screen flex flex-col">
