@@ -19,6 +19,11 @@ export interface CvJob {
   blurb: Bi;
   products: CvProduct[];
   bullets: Bi[];
+  // Additive filter metadata only - never rendered as visible text, never
+  // replaces it. Sourced from this job's own tech/tag text; left empty where
+  // the tie to a skill/industry isn't clearly supported by the content above.
+  skills?: string[];
+  industries?: string[];
 }
 
 export interface CvStat {
@@ -36,6 +41,9 @@ export interface CvSideProject {
   name: Bi;
   tag: Bi;
   desc: Bi;
+  // Same additive-only convention as CvJob.skills/industries above.
+  skills?: string[];
+  industries?: string[];
 }
 
 export interface CvEduItem {
@@ -72,6 +80,13 @@ export const CV_TEXT = {
     ctaText:
       "Fractional product management, business analysis, or building your product/BA function from scratch — let's find the right shape for your team.",
     ctaMail: "Email me",
+    filterSkillLabel: "Skill / tool",
+    filterIndustryLabel: "Industry / domain",
+    filterClearAll: "Clear all",
+    filterShowingRoles: "Showing {shown} of {total} roles",
+    filterShowingProjects: "Showing {shown} of {total} projects",
+    filterEmptyTitle: "No roles match these filters",
+    filterEmptyClear: "Clear filters",
   },
   ar: {
     badge: "السيرة الذاتية الكاملة — 13+ سنة",
@@ -101,6 +116,13 @@ export const CV_TEXT = {
     ctaText:
       "إدارة منتج بدوام جزئي، تحليل أعمال، أو بناء فريق المنتج/التحليل من الصفر — نتفق على الشكل المناسب لفريقك.",
     ctaMail: "راسلني",
+    filterSkillLabel: "المهارة / الأداة",
+    filterIndustryLabel: "المجال / القطاع",
+    filterClearAll: "مسح الكل",
+    filterShowingRoles: "بيظهر {shown} من {total} دور",
+    filterShowingProjects: "بيظهر {shown} من {total} مشروع",
+    filterEmptyTitle: "مفيش أدوار مطابقة لهذه الفلاتر",
+    filterEmptyClear: "امسح الفلاتر",
   },
 };
 
@@ -192,6 +214,8 @@ export const CV_JOBS: CvJob[] = [
       { en: "Prioritize backlog by customer value, business impact, and technical constraints.", ar: "ترتيب الباكلوج حسب قيمة العميل والأثر التجاري والقيود التقنية." },
       { en: "Run discovery, release planning, and executive alignment.", ar: "إدارة الاستكشاف وتخطيط الإصدارات والتوافق مع الإدارة التنفيذية." },
     ],
+    skills: ["Python", "Node.js", "Angular", "Flutter", "Figma", "Jira"],
+    industries: ["GovTech"],
   },
   {
     role: { en: "Product Manager & Associate Business Consultant", ar: "مدير منتج ومستشار أعمال مشارك" },
@@ -251,6 +275,8 @@ export const CV_JOBS: CvJob[] = [
         ar: "تقديم تدريب وجلسات توعية في استمرارية الأعمال (BCM/BCP) لجهات حكومية سعودية كبرى ودعم مستشاري BCM المتخصصين؛ وتقديم ورش أجايل/سكرم.",
       },
     ],
+    skills: ["Node.js", "Windows Server", "Linux Server", "Azure DevOps", "Figma"],
+    industries: ["GRC", "GovTech", "BCM"],
   },
   {
     role: { en: "Senior Business Analyst & Project Lead", ar: "محلل أعمال أول وقائد مشروع" },
@@ -282,6 +308,8 @@ export const CV_JOBS: CvJob[] = [
         ar: "تقدير لقيادة فريق عالية الكفاءة وبدون خلافات؛ ورضا الفريق كان مرتفعًا جدًا.",
       },
     ],
+    skills: [".NET", "Angular"],
+    industries: ["GovTech"],
   },
   {
     role: { en: "Projects Launching Manager (Remote)", ar: "مدير إطلاق المشاريع (عن بعد)" },
@@ -307,6 +335,8 @@ export const CV_JOBS: CvJob[] = [
       },
       { en: "Coordinated external smart-contract audits.", ar: "تنسيق تدقيق العقود الذكية مع جهات خارجية." },
     ],
+    skills: ["Solidity", "Hardhat", "Remix", "Blockchain (Ethereum, BSC, Polygon, Arbitrum)", "Smart-Contract Review & Audit Coordination"],
+    industries: ["Blockchain & Smart Contracts"],
   },
   {
     role: { en: "Senior Business Analyst / Product Owner", ar: "محلل أعمال أول / مالك منتج" },
@@ -376,6 +406,7 @@ export const CV_JOBS: CvJob[] = [
         ar: "كتابة SRS ويوزر ستوريز وحالات استخدام؛ وملكية تنظيم الباكلوج والأولويات وتخطيط السبرنتات على مشاريع متزامنة.",
       },
     ],
+    industries: ["Telecom", "SaaS", "GovTech", "Fleet Management", "POS / Retail", "E-Commerce"],
   },
   {
     role: { en: "Analyst & Product Owner", ar: "محلل ومالك منتج" },
@@ -402,6 +433,7 @@ export const CV_JOBS: CvJob[] = [
       },
     ],
     bullets: [],
+    industries: ["Blockchain & Smart Contracts"],
   },
   {
     role: { en: "Senior Business Analyst", ar: "محلل أعمال أول" },
@@ -425,6 +457,8 @@ export const CV_JOBS: CvJob[] = [
       },
     ],
     bullets: [],
+    skills: ["Encryption Workflows (exposure)"],
+    industries: ["Secure Identity", "GovTech"],
   },
   {
     role: { en: "Software Project Manager & Business Analyst", ar: "مدير مشاريع برمجية ومحلل أعمال" },
@@ -441,6 +475,7 @@ export const CV_JOBS: CvJob[] = [
       { en: "Managed projects and teams: backlog management, sprint planning, demos, scope and resources.", ar: "إدارة المشاريع والفرق: إدارة الباكلوج، تخطيط السبرنتات، العروض، النطاق والموارد." },
       { en: "Requirement elicitation, user-story authoring, UX coordination; proxy product owner in Agile ceremonies.", ar: "استخلاص المتطلبات، كتابة اليوزر ستوريز، تنسيق تجربة المستخدم؛ ومالك منتج بالوكالة في اجتماعات أجايل." },
     ],
+    industries: ["POS / Retail"],
   },
   {
     role: { en: "Software Analyst & Business Developer", ar: "محلل برمجيات ومطور أعمال" },
@@ -471,6 +506,7 @@ export const CV_JOBS: CvJob[] = [
       { en: "Managed 10+ clients and achieved ~80,000 SAR in sales in the period — a significant figure at the time.", ar: "إدارة أكثر من 10 عملاء وتحقيق مبيعات ~80,000 ريال سعودي في الفترة — رقم كبير في ذلك الوقت." },
       { en: "Pipeline and account development, contract negotiation, client-success coordination.", ar: "تطوير قائمة العملاء المحتملين والحسابات، التفاوض على العقود، وتنسيق نجاح العملاء." },
     ],
+    industries: ["E-Commerce"],
   },
 ];
 
@@ -509,6 +545,7 @@ export const CV_SIDE: CvSideProject[] = [
       en: "An AI product integrating an HR module with any ERP; automates employee self-service (leave, cash advances, biometric attendance) and speeds up team workflows. Helped build the project and its ERP integration.",
       ar: "منتج ذكاء اصطناعي يربط وحدة الموارد البشرية بأي ERP؛ يؤتمت الخدمة الذاتية للموظف (الإجازات، السلف، الحضور البيومتري) ويسرّع مسارات العمل. شاركت في بناء المشروع وتكامله مع الـ ERP.",
     },
+    industries: ["HR Tech", "ERP"],
   },
   {
     name: { en: "Egypt Digital Platform — Courts module", ar: "منصة مصر الرقمية — وحدة المحاكم" },
@@ -517,11 +554,13 @@ export const CV_SIDE: CvSideProject[] = [
       en: "The courts portion of the Egypt Digital Platform, delivered via a company; co-designed the prototype and workflow with another team.",
       ar: "الجزء الخاص بالمحاكم في منصة مصر الرقمية، عبر شركة؛ وشاركت في تصميم النموذج ومسار العمل مع فريق آخر.",
     },
+    industries: ["GovTech"],
   },
   {
     name: { en: "E-Commerce Platform — Libya", ar: "منصة تجارة إلكترونية — ليبيا" },
     tag: { en: "E-commerce", ar: "تجارة إلكترونية" },
     desc: { en: "E-commerce platform for a company in Libya.", ar: "منصة تجارة إلكترونية لشركة في ليبيا." },
+    industries: ["E-Commerce"],
   },
   {
     name: { en: "Online Auctions Platform", ar: "منصة مزادات إلكترونية" },
@@ -532,6 +571,7 @@ export const CV_SIDE: CvSideProject[] = [
     name: { en: "Grants Management System", ar: "نظام إدارة المنح" },
     tag: { en: "GovTech / grants", ar: "حكومي / منح" },
     desc: { en: "Business analysis only — requirements and analysis.", ar: "تحليل أعمال فقط — المتطلبات والتحليل." },
+    industries: ["GovTech"],
   },
   {
     name: { en: "Dubai On-Demand Services Platform", ar: "منصة خدمات عند الطلب — دبي" },
@@ -545,6 +585,8 @@ export const CV_SIDE: CvSideProject[] = [
       en: "Freelance enhancement of an accounting ERP, plus Odoo accounting ERP training delivered with a company.",
       ar: "تحسين نظام ERP محاسبي كعمل حر، بالإضافة لتقديم تدريب على محاسبة Odoo مع شركة.",
     },
+    skills: ["Odoo (ERP)"],
+    industries: ["ERP"],
   },
   {
     name: { en: "Personal projects (vibe coding)", ar: "مشاريع شخصية (Vibe Coding)" },
@@ -553,6 +595,7 @@ export const CV_SIDE: CvSideProject[] = [
       en: "A database chatbot that answers from a database, this personal website, and a friend's website — all built with Claude Code, Codex, and Vercel.",
       ar: "شات بوت يجيب من قاعدة بيانات، هذا الموقع الشخصي، وموقع لصديق — كلها مبنية بـ Claude Code وCodex وVercel.",
     },
+    skills: ["AI-Assisted Development (Claude Code, Codex)", "Vercel"],
   },
   {
     name: { en: "Requirements-gathering partnerships", ar: "شراكات جمع المتطلبات" },
@@ -563,6 +606,17 @@ export const CV_SIDE: CvSideProject[] = [
     },
   },
 ];
+
+// Filter-bar option lists, derived from the skills/industries actually tagged
+// above so the UI never offers a choice that matches nothing. Sorted
+// alphabetically for a stable, predictable order.
+export const CV_SKILL_OPTIONS: string[] = Array.from(
+  new Set([...CV_JOBS, ...CV_SIDE].flatMap((item) => item.skills ?? []))
+).sort();
+
+export const CV_INDUSTRY_OPTIONS: string[] = Array.from(
+  new Set([...CV_JOBS, ...CV_SIDE].flatMap((item) => item.industries ?? []))
+).sort();
 
 export const CV_EDUCATION: CvEduItem[] = [
   { name: { en: "B.Sc. in Computer Science", ar: "بكالوريوس علوم حاسب" }, meta: { en: "Thebes Academy, Egypt — 2014", ar: "أكاديمية طيبة، مصر — 2014" } },
