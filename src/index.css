@@ -125,7 +125,9 @@
     font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
-  [dir="rtl"] .flex {
+  /* Only mirror row layouts - .flex-col/.flex-col-reverse are explicit vertical
+     stacks and must never be reversed into a squeezed horizontal row. */
+  [dir="rtl"] .flex:not(.flex-col):not(.flex-col-reverse) {
     flex-direction: row-reverse;
   }
 
