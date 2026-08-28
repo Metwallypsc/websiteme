@@ -26,12 +26,20 @@ if (!fs.existsSync(ssrEntryPath)) {
 }
 const { render } = await import(pathToFileURL(ssrEntryPath).href);
 
+// Bilingual pages: EN at the bare path, AR under "/ar" (see localizePath in
+// src/contexts/LanguageContext.tsx - keep both lists in sync with App.tsx).
+const bilingualPaths = ["/", "/about", "/cv", "/services", "/contact"];
 const routes = [
-  { url: "/", outFile: "index.html" },
-  { url: "/about", outFile: "about/index.html" },
-  { url: "/cv", outFile: "cv/index.html" },
-  { url: "/services", outFile: "services/index.html" },
-  { url: "/contact", outFile: "contact/index.html" },
+  ...bilingualPaths.map((p) => ({
+    url: p,
+    outFile: p === "/" ? "index.html" : `${p.slice(1)}/index.html`,
+    sitemap: true,
+  })),
+  ...bilingualPaths.map((p) => ({
+    url: p === "/" ? "/ar" : `/ar${p}`,
+    outFile: p === "/" ? "ar/index.html" : `ar${p}/index.html`,
+    sitemap: true,
+  })),
   // Prerendered so a direct visit/refresh resolves to a real file instead of
   // a 404 - always renders logged-out (no cookies exist at build time), the
   // client-side auth check takes over after hydration. Kept out of the
@@ -48,7 +56,6 @@ function stripStaticSeoTags(html) {
     .replace(/\s*<meta\s+name="robots"[^>]*>\n?/, "\n")
     .replace(/\s*<link\s+rel="canonical"[^>]*>\n?/, "\n")
     .replace(/\s*<meta\s+property="og:[^"]*"[^>]*>\n?/g, "\n")
-    .replace(/\s*<meta\s+name="twitter:[^"]*"[^>]*>\n?/g, "\n")
     .replace(/<html[^>]*>/, "<html>");
 }
 
@@ -78,4 +85,48 @@ for (const route of routes) {
 
 // The SSR bundle is a build-time-only tool; never deploy it.
 fs.rmSync(ssrDir, { recursive: true, force: true });
+
+// --- sitemap.xml -----------------------------------------------------
+// Must match SITE_URL in src/data/structuredData.ts.
+const SITE_URL = "https://www.arhmetwally.com";
+const today = new Date().toISOString().slice(0, 10);
+const localePath = (p, lang) => (lang === "ar" ? (p === "/" ? "/ar" : `/ar${p}`) : p);
+
+const sitemapUrls = routes
+  .filter((r) => r.sitemap)
+  .map((r) => {
+    // Recover the bilingual-page's bare path + locale from its own url.
+    const isAr = r.url === "/ar" || r.url.startsWith("/ar/");
+    const bare = isAr ? (r.url === "/ar" ? "/" : r.url.slice(3)) : r.url;
+    const en = `${SITE_URL}${bare}`;
+    const ar = `${SITE_URL}${localePath(bare, "ar")}`;
+    return {
+      loc: isAr ? ar : en,
+      priority: bare === "/" ? "1.0" : bare === "/contact" ? "0.7" : "0.9",
+      alternates: [
+        { hreflang: "en", href: en },
+        { hreflang: "ar", href: ar },
+        { hreflang: "x-default", href: en },
+      ],
+    };
+  });
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${sitemapUrls
+  .map(
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${u.priority}</priority>
+${u.alternates.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`).join("\n")}
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemapXml, "utf-8");
+console.log(`[prerender] sitemap.xml -> ${sitemapUrls.length} URLs`);
+
 console.log("[prerender] done.");

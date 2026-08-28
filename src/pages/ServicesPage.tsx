@@ -2,14 +2,14 @@ import Services from "@/components/Services";
 import FAQ from "@/components/FAQ";
 import SEO from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { personJsonLd, webPageJsonLd, SITE_URL } from "@/data/structuredData";
+import { personJsonLd, webPageJsonLd, professionalServiceJsonLd, SITE_URL } from "@/data/structuredData";
 
 const TITLE = "Product Management & Business Analysis Services";
 const DESCRIPTION =
   "Product Management as a Service (PMaaS), business analysis & documentation, team building, technical liaison, and mentorship - from a Senior PM with 13+ years across GRC, GovTech, SaaS, and more.";
 
 const ServicesPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const serviceKeys = [
     "service1",
@@ -20,16 +20,17 @@ const ServicesPage = () => {
   ] as const;
 
   const serviceListJsonLd = {
-    "@type": "CollectionPage",
     ...webPageJsonLd({
       name: TITLE,
       description: DESCRIPTION,
       path: "/services",
+      language,
       breadcrumb: [
         { name: "Home", path: "/" },
         { name: "Services", path: "/services" },
       ],
     }),
+    "@type": "CollectionPage",
     mainEntity: {
       "@type": "ItemList",
       itemListElement: serviceKeys.map((key, i) => ({
@@ -61,7 +62,7 @@ const ServicesPage = () => {
         title={TITLE}
         description={DESCRIPTION}
         path="/services"
-        jsonLd={[personJsonLd, serviceListJsonLd, faqJsonLd]}
+        jsonLd={[personJsonLd, professionalServiceJsonLd, serviceListJsonLd, faqJsonLd]}
       />
       <h1 className="sr-only">{t("servicesPageH1")}</h1>
       <Services />

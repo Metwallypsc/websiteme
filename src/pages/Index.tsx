@@ -4,13 +4,15 @@ import WhoIsThisFor from "@/components/WhoIsThisFor";
 import WhyWorkWithMe from "@/components/WhyWorkWithMe";
 import Contact from "@/components/Contact";
 import SEO from "@/components/SEO";
-import { personJsonLd, websiteJsonLd, webPageJsonLd } from "@/data/structuredData";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { personJsonLd, websiteJsonLd, webPageJsonLd, professionalServiceJsonLd } from "@/data/structuredData";
 
 const TITLE = "Abdulrhman Metwally - Product Management Services";
 const DESCRIPTION =
   "Senior Product Manager & Business Analyst with 13+ years shipping enterprise software across GRC, GovTech, SaaS, Telecom, HR Tech, and Blockchain. Product Management as a Service, business analysis, and team building.";
 
 const Index = () => {
+  const { language } = useLanguage();
   return (
     <main id="main-content" className="min-h-screen">
       <SEO
@@ -20,7 +22,8 @@ const Index = () => {
         jsonLd={[
           personJsonLd,
           websiteJsonLd,
-          webPageJsonLd({ name: TITLE, description: DESCRIPTION, path: "/" }),
+          professionalServiceJsonLd,
+          webPageJsonLd({ name: TITLE, description: DESCRIPTION, path: "/", language }),
         ]}
       />
       <Hero />

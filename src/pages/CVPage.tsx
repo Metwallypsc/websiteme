@@ -1,5 +1,6 @@
 import CV from "@/components/CV";
 import SEO from "@/components/SEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { personJsonLd, webPageJsonLd } from "@/data/structuredData";
 
 const TITLE = "CV - Abdulrhman Metwally, Senior Product Manager";
@@ -7,6 +8,7 @@ const DESCRIPTION =
   "Full CV: 13+ years in product management and business analysis across TAM, PSC, PSH, Futira, Unicom, GET Group and more - GRC, GovTech, SaaS, Telecom, and Blockchain products shipped to government ministries.";
 
 const CVPage = () => {
+  const { language } = useLanguage();
   return (
     <main id="main-content" className="pt-20">
       <SEO
@@ -19,6 +21,7 @@ const CVPage = () => {
             name: TITLE,
             description: DESCRIPTION,
             path: "/cv",
+            language,
             breadcrumb: [
               { name: "Home", path: "/" },
               { name: "CV", path: "/cv" },

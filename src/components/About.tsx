@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, localizePath } from "@/contexts/LanguageContext";
 import { CV_STATS } from "@/data/cvData";
 import { ArrowRight } from "lucide-react";
 
@@ -38,7 +38,7 @@ const About = () => {
           <p className="text-slate-300 mb-7 max-w-xl mx-auto">{t("aboutCtaText")}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-              <Link to="/cv">
+              <Link to={localizePath("/cv", language)}>
                 {t("aboutCtaCv")}
                 <ArrowRight className="ms-2 h-4 w-4 rtl:rotate-180" />
               </Link>
@@ -49,7 +49,7 @@ const About = () => {
               size="lg"
               className="border-slate-600 text-white bg-transparent hover:bg-slate-800"
             >
-              <Link to="/services">{t("aboutCtaServices")}</Link>
+              <Link to={localizePath("/services", language)}>{t("aboutCtaServices")}</Link>
             </Button>
           </div>
         </div>

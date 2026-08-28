@@ -1,6 +1,22 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type Language = 'en' | 'ar';
+
+// English paths are canonical/unprefixed ("/", "/cv"...); Arabic is served
+// under an "/ar" prefix ("/ar", "/ar/cv"...) so each locale is a real,
+// separately crawlable URL. These two helpers are the single source of
+// truth for that mapping - use them for every internal link/navigate.
+export function localizePath(path: string, language: Language): string {
+  if (language !== 'ar') return path;
+  return path === '/' ? '/ar' : `/ar${path}`;
+}
+
+export function delocalizePath(pathname: string): string {
+  if (pathname === '/ar') return '/';
+  if (pathname.startsWith('/ar/')) return pathname.slice(3);
+  return pathname;
+}
 
 interface LanguageContextType {
   language: Language;
@@ -389,7 +405,22 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const language: Language =
+    location.pathname === '/ar' || location.pathname.startsWith('/ar/') ? 'ar' : 'en';
+
+  // Navigates to the equivalent URL under the other locale instead of just
+  // flipping local state, since language is now derived from the URL.
+  const setLanguage = (nextLanguage: Language) => {
+    if (nextLanguage === language) return;
+    const bare = delocalizePath(location.pathname);
+    navigate({
+      pathname: localizePath(bare, nextLanguage),
+      search: location.search,
+      hash: location.hash,
+    });
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['en']] || key;

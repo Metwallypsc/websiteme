@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, localizePath, delocalizePath } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     console.error(
@@ -20,7 +20,7 @@ const NotFound = () => {
       <SEO
         title={t("notFoundTitle")}
         description={t("notFoundText")}
-        path={location.pathname}
+        path={delocalizePath(location.pathname)}
         noindex
       />
       <div className="text-center px-6">
@@ -28,7 +28,7 @@ const NotFound = () => {
         <h1 className="text-2xl font-bold text-slate-900 mb-3">{t("notFoundTitle")}</h1>
         <p className="text-slate-600 mb-8 max-w-sm mx-auto">{t("notFoundText")}</p>
         <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-          <Link to="/">{t("notFoundCta")}</Link>
+          <Link to={localizePath("/", language)}>{t("notFoundCta")}</Link>
         </Button>
       </div>
     </main>

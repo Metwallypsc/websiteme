@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, localizePath } from "@/contexts/LanguageContext";
 import BookCallButton from "@/components/BookCallButton";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -32,7 +32,7 @@ const Contact = () => {
               size="lg"
               className="border-white text-blue-600 hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
             >
-              <Link to="/contact#contact-form">
+              <Link to={`${localizePath("/contact", language)}#contact-form`}>
                 <MessageSquare className="mr-2 h-5 w-5" />
                 {t('sendMessage')}
               </Link>

@@ -1,28 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Regenerated automatically by scripts/prerender.mjs on every `npm run build`.
+     This checked-in copy is a reasonable static fallback for local/dev use only. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://arhmetwally.com/</loc>
+    <loc>https://www.arhmetwally.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/" />
   </url>
   <url>
-    <loc>https://arhmetwally.com/about</loc>
+    <loc>https://www.arhmetwally.com/ar</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/" />
   </url>
   <url>
-    <loc>https://arhmetwally.com/cv</loc>
+    <loc>https://www.arhmetwally.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/about" />
   </url>
   <url>
-    <loc>https://arhmetwally.com/services</loc>
+    <loc>https://www.arhmetwally.com/ar/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/about" />
   </url>
   <url>
-    <loc>https://arhmetwally.com/contact</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.arhmetwally.com/cv</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/cv" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/cv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/cv" />
+  </url>
+  <url>
+    <loc>https://www.arhmetwally.com/ar/cv</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/cv" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/cv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/cv" />
+  </url>
+  <url>
+    <loc>https://www.arhmetwally.com/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/services" />
+  </url>
+  <url>
+    <loc>https://www.arhmetwally.com/ar/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/services" />
+  </url>
+  <url>
+    <loc>https://www.arhmetwally.com/contact</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.arhmetwally.com/ar/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.arhmetwally.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.arhmetwally.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.arhmetwally.com/contact" />
   </url>
 </urlset>

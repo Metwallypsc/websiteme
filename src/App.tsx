@@ -12,6 +12,12 @@ import AdminDashboardPage from "./pages/AdminDashboardPage";
 
 // Route tree only - no Router or providers here, so the same tree can be
 // mounted under BrowserRouter (client) or StaticRouter (SSR prerendering).
+//
+// The public pages are mounted twice: once at the bare (English/canonical)
+// paths and once under "/ar" (Arabic) - same components both times, since
+// LanguageProvider (inside Layout) derives the active language from the URL
+// itself. Keep this list in sync with localizePath/delocalizePath in
+// LanguageContext.tsx and the route list in scripts/prerender.mjs.
 const AppRoutes = () => (
   <Routes>
     <Route element={<Layout />}>
@@ -20,6 +26,15 @@ const AppRoutes = () => (
       <Route path="/cv" element={<CVPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+
+    <Route path="/ar" element={<Layout />}>
+      <Route index element={<Index />} />
+      <Route path="about" element={<About />} />
+      <Route path="cv" element={<CVPage />} />
+      <Route path="services" element={<ServicesPage />} />
+      <Route path="contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
 

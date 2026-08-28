@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Github, Mail, MapPin, Globe, ArrowUp, CalendarClock } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, localizePath } from "@/contexts/LanguageContext";
 import { PERSON_EMAIL, LINKEDIN_URL, GITHUB_URL } from "@/data/structuredData";
 import { openCalendlyPopup } from "@/lib/calendly";
 import { trackEvent } from "@/lib/analytics";
@@ -10,11 +10,11 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   const navItems = [
-    { to: "/", label: t("navHome") },
-    { to: "/about", label: t("navAbout") },
-    { to: "/cv", label: t("navCV") },
-    { to: "/services", label: t("navServices") },
-    { to: "/contact", label: t("navContact") },
+    { to: localizePath("/", language), label: t("navHome") },
+    { to: localizePath("/about", language), label: t("navAbout") },
+    { to: localizePath("/cv", language), label: t("navCV") },
+    { to: localizePath("/services", language), label: t("navServices") },
+    { to: localizePath("/contact", language), label: t("navContact") },
   ];
 
   const serviceLinks = [
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.2fr_1.2fr] gap-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="inline-flex bg-white rounded-lg px-3 py-2 mb-5">
+            <Link to={localizePath("/", language)} className="inline-flex bg-white rounded-lg px-3 py-2 mb-5">
               <img
                 src="/logo.svg"
                 alt="Abdulrhman Metwally"
@@ -108,7 +108,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               {serviceLinks.map((label) => (
                 <li key={label}>
-                  <Link to="/services" className="text-slate-300 text-sm hover:text-white transition-colors">
+                  <Link to={localizePath("/services", language)} className="text-slate-300 text-sm hover:text-white transition-colors">
                     {label}
                   </Link>
                 </li>

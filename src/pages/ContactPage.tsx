@@ -10,7 +10,7 @@ const DESCRIPTION =
   "Get in touch for fractional product management, business analysis, or building your product/BA function from scratch. Email or connect on LinkedIn.";
 
 const ContactPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { hash } = useLocation();
 
   // React Router doesn't scroll to hash targets on navigation by itself -
@@ -36,6 +36,7 @@ const ContactPage = () => {
               name: TITLE,
               description: DESCRIPTION,
               path: "/contact",
+              language,
               breadcrumb: [
                 { name: "Home", path: "/" },
                 { name: "Contact", path: "/contact" },

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import { Mail, Linkedin, Github, Globe, Menu } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, localizePath } from "@/contexts/LanguageContext";
 import { LINKEDIN_URL } from "@/data/structuredData";
 import BookCallButton from "@/components/BookCallButton";
 
@@ -17,11 +17,11 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
-    { to: "/", label: t("navHome") },
-    { to: "/about", label: t("navAbout") },
-    { to: "/cv", label: t("navCV") },
-    { to: "/services", label: t("navServices") },
-    { to: "/contact", label: t("navContact") },
+    { to: localizePath("/", language), label: t("navHome") },
+    { to: localizePath("/about", language), label: t("navAbout") },
+    { to: localizePath("/cv", language), label: t("navCV") },
+    { to: localizePath("/services", language), label: t("navServices") },
+    { to: localizePath("/contact", language), label: t("navContact") },
   ];
 
   return (
@@ -29,7 +29,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to={localizePath("/", language)} className="flex items-center gap-2">
             <img
               src="/logo.svg"
               alt="Abdulrhman Metwally"
@@ -73,7 +73,7 @@ const Header = () => {
               size="sm"
               className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
-              <Link to="/contact">
+              <Link to={localizePath("/contact", language)}>
                 <Mail className="h-4 w-4" />
                 {t("contact")}
               </Link>

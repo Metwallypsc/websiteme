@@ -89,4 +89,4 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-Sitemap: https://arhmetwally.com/sitemap.xml
+Sitemap: https://www.arhmetwally.com/sitemap.xml
