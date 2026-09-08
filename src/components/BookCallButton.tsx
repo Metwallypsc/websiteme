@@ -3,7 +3,7 @@ import { CalendarClock } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import type { VariantProps } from "class-variance-authority";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { openCalendlyPopup } from "@/lib/calendly";
+import { openCalPopup } from "@/lib/cal";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ interface BookCallButtonProps
   showIcon?: boolean;
 }
 
-// Opens the Calendly popup and fires an analytics event tagged with where
+// Opens the Cal.com popup and fires an analytics event tagged with where
 // on the site the click came from (hero, header, footer, closing CTA...).
 const BookCallButton = ({
   source,
@@ -24,11 +24,11 @@ const BookCallButton = ({
   className,
   ...props
 }: BookCallButtonProps) => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const handleClick = () => {
     trackEvent("book_a_call_click", { source });
-    void openCalendlyPopup(language);
+    openCalPopup();
   };
 
   return (

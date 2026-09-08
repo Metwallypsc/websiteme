@@ -2,15 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CalendarClock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { openCalendlyPopup } from "@/lib/calendly";
+import { openCalPopup } from "@/lib/cal";
 import { trackEvent } from "@/lib/analytics";
 
 const Hero = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const handleGetStarted = () => {
     trackEvent("book_a_call_click", { source: "hero_get_started" });
-    void openCalendlyPopup(language);
+    openCalPopup();
   };
 
   return (

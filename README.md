@@ -83,7 +83,7 @@ Never commit a real `.env` file.
 | `DATABASE_URL` | Admin panel visitor counter (Neon Postgres) |
 | `ADMIN_USERNAME` / `ADMIN_PASSWORD` | `/admin` login |
 | `ADMIN_SESSION_SECRET` | Signs the admin session cookie |
-| `VITE_CALENDLY_URL` | "Book a call" popup + inline embed on `/contact` |
+| `VITE_CALCOM_URL` | "Book a call" popup + inline embed on `/contact` |
 | `RESEND_API_KEY` | Sends the contact form's email notification |
 | `RESEND_FROM_EMAIL` | Optional - sender address once a domain is verified with Resend |
 | `VITE_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Contact form spam protection (Cloudflare Turnstile) |

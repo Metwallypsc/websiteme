@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CALENDLY_URL, initInlineWidget } from "@/lib/calendly";
+import { CALCOM_URL, initInlineWidget } from "@/lib/cal";
 
-// Loads Calendly lazily, only once this section actually scrolls into view -
-// there's no reason to pull in Calendly's script for visitors who never
+// Loads Cal.com lazily, only once this section actually scrolls into view -
+// there's no reason to pull in the embed script for visitors who never
 // reach the contact page's booking widget.
-const CalendlyInlineEmbed = () => {
-  const { language, t } = useLanguage();
+const CalInlineEmbed = () => {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const node = containerRef.current;
-    if (!node || !CALENDLY_URL) return;
+    if (!node || !CALCOM_URL) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,10 +29,10 @@ const CalendlyInlineEmbed = () => {
 
   useEffect(() => {
     if (!inView || !containerRef.current) return;
-    void initInlineWidget(containerRef.current, language);
-  }, [inView, language]);
+    initInlineWidget(containerRef.current);
+  }, [inView]);
 
-  if (!CALENDLY_URL) {
+  if (!CALCOM_URL) {
     return null;
   }
 
@@ -51,4 +51,4 @@ const CalendlyInlineEmbed = () => {
   );
 };
 
-export default CalendlyInlineEmbed;
+export default CalInlineEmbed;

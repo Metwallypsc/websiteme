@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import ContactForm from "@/components/ContactForm";
-import CalendlyInlineEmbed from "@/components/CalendlyInlineEmbed";
+import CalInlineEmbed from "@/components/CalInlineEmbed";
 
 const ContactFormSection = () => {
   const { t, language } = useLanguage();
@@ -28,7 +28,7 @@ const ContactFormSection = () => {
             <p className="text-sm font-medium text-slate-500 mb-4 text-center lg:text-start">
               {t("contactFormBookInstead")}
             </p>
-            <CalendlyInlineEmbed />
+            <CalInlineEmbed />
           </div>
         </div>
       </div>

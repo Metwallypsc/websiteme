@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Linkedin, Github, Mail, MapPin, Globe, ArrowUp, CalendarClock } from "lucide-react";
 import { useLanguage, localizePath } from "@/contexts/LanguageContext";
 import { PERSON_EMAIL, LINKEDIN_URL, GITHUB_URL } from "@/data/structuredData";
-import { openCalendlyPopup } from "@/lib/calendly";
+import { openCalPopup } from "@/lib/cal";
 import { trackEvent } from "@/lib/analytics";
 
 const Footer = () => {
@@ -29,7 +29,7 @@ const Footer = () => {
 
   const handleBookCall = () => {
     trackEvent("book_a_call_click", { source: "footer" });
-    void openCalendlyPopup(language);
+    openCalPopup();
   };
 
   return (
