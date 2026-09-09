@@ -39,10 +39,7 @@ const Contact = () => {
               size="lg"
               className="border-white text-blue-600 hover:bg-white hover:!text-black transition-all duration-300 shadow-lg"
             >
-              <Link
-                to={`${localizePath("/contact", language)}#contact-form`}
-                className="rtl:flex-row-reverse"
-              >
+              <Link to={`${localizePath("/contact", language)}#contact-form`}>
                 <MessageSquare className="h-5 w-5" />
                 {t('sendMessage')}
               </Link>
