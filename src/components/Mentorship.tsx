@@ -182,7 +182,7 @@ const Mentorship = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white shrink-0"
                 onClick={() => trackEvent("linkedin_click", { source: "mentorship_follow" })}
               >
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="rtl:flex-row-reverse">
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4" />
                   {t("mentorshipFollowCta")} →
                 </a>
@@ -239,7 +239,6 @@ const Mentorship = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick("mentorship_closing_cta")}
-                className="rtl:flex-row-reverse"
               >
                 <MessageSquare className="h-5 w-5" />
                 {t("mentorshipCtaSend")}

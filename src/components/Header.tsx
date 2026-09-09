@@ -64,7 +64,7 @@ const Header = () => {
             <BookCallButton
               source="header"
               size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white rtl:flex-row-reverse"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
             />
 
             <Button
@@ -73,7 +73,7 @@ const Header = () => {
               size="sm"
               className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
-              <Link to={localizePath("/contact", language)} className="rtl:flex-row-reverse">
+              <Link to={localizePath("/contact", language)}>
                 <Mail className="h-4 w-4" />
                 {t("contact")}
               </Link>
@@ -83,7 +83,7 @@ const Header = () => {
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex rtl:flex-row-reverse"
+              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
               <Globe className="h-4 w-4" />
               {language === "en" ? "العربية" : "English"}
@@ -129,7 +129,7 @@ const Header = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-                    className="w-full justify-center text-slate-600 hover:text-slate-900 rtl:flex-row-reverse"
+                    className="w-full justify-center text-slate-600 hover:text-slate-900"
                   >
                     <Globe className="h-4 w-4" />
                     {language === "en" ? "العربية" : "English"}
