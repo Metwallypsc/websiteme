@@ -27,7 +27,7 @@ const Index = () => {
         ]}
       />
       <Hero />
-      <Services />
+      <Services hideMentorship />
       <WhoIsThisFor />
       <WhyWorkWithMe />
       <Contact />

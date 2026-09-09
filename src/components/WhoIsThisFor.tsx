@@ -1,11 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Rocket, 
-  Building, 
-  Users, 
-  GraduationCap, 
-  Building2 
+import {
+  Rocket,
+  Building,
+  Users,
+  Building2
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -29,11 +28,6 @@ const WhoIsThisFor = () => {
       description: t('audience3Desc')
     },
     {
-      icon: <GraduationCap className="h-8 w-8 text-accent" />,
-      title: t('audience4'),
-      description: t('audience4Desc')
-    },
-    {
       icon: <Building2 className="h-8 w-8 text-accent" />,
       title: t('audience5'),
       description: t('audience5Desc')
@@ -52,7 +46,7 @@ const WhoIsThisFor = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {audiences.map((audience, index) => (
             <Card 
               key={index} 

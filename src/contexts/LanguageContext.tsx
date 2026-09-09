@@ -30,6 +30,7 @@ const translations = {
     navHome: "Home",
     navAbout: "About",
     navServices: "Services",
+    navMentorship: "Mentorship",
     navContact: "Contact",
     navCV: "My CV",
     contact: "Contact",
@@ -113,8 +114,6 @@ const translations = {
     audience2Desc: "seeking to scale with structure",
     audience3: "Agencies",
     audience3Desc: "building regulated or high-risk products",
-    audience4: "New professionals",
-    audience4Desc: "entering the BA/Product world",
     audience5: "Enterprises",
     audience5Desc: "transitioning from waterfall to Agile",
     
@@ -169,7 +168,9 @@ const translations = {
 
     // Contact
     contactTitle: "Ready to build something meaningful?",
-    contactSubtitle: "Let's talk about how I can support your product journey — as a service, as a coach, or as your partner in solving complex problems.",
+    contactSubtitlePrefix: "Let's talk about how I can support your product journey — as a service, or as your partner in solving complex problems. Looking for ",
+    contactSubtitleMentorshipLink: "1:1 mentorship",
+    contactSubtitleSuffix: " instead?",
     contactEmail: "Arhmetwally@outlook.com",
     linkedinProfile: "LinkedIn Profile",
     quote: "\"Your product deserves more than just management — it deserves momentum.\"",
@@ -210,12 +211,76 @@ const translations = {
     validationMessageRequired: "Please write a message (at least 10 characters).",
 
     // service select uses the footerService1-5 labels + this one
+
+    // Mentorship page (/mentorship)
+    mentorshipBadge: "For aspiring PMs & BAs",
+    mentorshipH1Prefix: "Learn product & analysis from a ",
+    mentorshipH1Highlight: "practitioner",
+    mentorshipH1Suffix: ", not a textbook",
+    mentorshipSubtitle:
+      "1:1 mentorship and practical coaching for anyone breaking into — or growing in — Product Management and Business Analysis, guided by 13+ years of hands-on experience shipping real products in complex industries.",
+    mentorshipCtaBook: "Book a mentorship session",
+    mentorshipCtaHow: "How it works",
+
+    mentorshipWhoTitle: "Who this is for",
+    mentorshipWhoSubtitle: "Support for individuals at the start of their product or business-analysis journey.",
+    mentorshipWho1Title: "Career switchers",
+    mentorshipWho1Desc: "Coming from another field and want a clear, realistic path into Product or BA.",
+    mentorshipWho2Title: "Junior PMs / BAs",
+    mentorshipWho2Desc: "Already in a role but want to sharpen your craft and grow with confidence.",
+    mentorshipWho3Title: "Job seekers",
+    mentorshipWho3Desc: "Preparing for interviews and need honest feedback on your resume and readiness.",
+
+    mentorshipGetTitle: "What you get",
+    mentorshipGetSubtitle: "Practical, 1:1, and focused on getting you role-ready — not theory for its own sake.",
+    mentorshipGet1Title: "1:1 mentorship & onboarding",
+    mentorshipGet1Item1: "Practical onboarding into the PM / BA role",
+    mentorshipGet1Item2: "A clear picture of what the day-to-day really looks like",
+    mentorshipGet1Item3: "Answers to the questions courses never cover",
+    mentorshipGet2Title: "Resume & role readiness",
+    mentorshipGet2Item1: "Resume building and positioning for PM / BA roles",
+    mentorshipGet2Item2: "Role-readiness support before you apply",
+    mentorshipGet2Item3: "Personalized feedback on your career strategy",
+    mentorshipGet3Title: "Career navigation in tech",
+    mentorshipGet3Item1: "Practical tips for navigating tech careers",
+    mentorshipGet3Item2: "How to choose between roles, teams, and paths",
+    mentorshipGet3Item3: "Guidance grounded in real industry experience",
+    mentorshipGet4Title: "Arabic content & resources",
+    mentorshipGet4Item1: "Practical PM / BA content in Arabic — rare in the region",
+    mentorshipGet4Item2: "Hands-on articles and breakdowns you can trust",
+    mentorshipGet4Item3: "Learn from a practitioner, in your own language",
+    mentorshipGet4Item4: "Templates and starting points (coming soon)",
+
+    mentorshipFollowTitle: "Follow along between sessions",
+    mentorshipFollowText:
+      "I share practical product and business-analysis content in Arabic for people building their careers in tech. Follow to learn in public — and reach out when you're ready for 1:1 guidance.",
+    mentorshipFollowTag1: "Product Management",
+    mentorshipFollowTag2: "Business Analysis",
+    mentorshipFollowTag3: "Career in Tech",
+    mentorshipFollowTag4: "Arabic content",
+    mentorshipFollowCta: "View LinkedIn profile",
+
+    mentorshipHowTitle: "How it works",
+    mentorshipHowSubtitle: "Simple, direct, and built around where you are right now.",
+    mentorshipHow1Title: "Reach out",
+    mentorshipHow1Desc: "Send a short message about where you are and what you want to achieve.",
+    mentorshipHow2Title: "We map your path",
+    mentorshipHow2Desc: "A focused session to pinpoint your gaps, strengths, and the fastest next step.",
+    mentorshipHow3Title: "You move forward",
+    mentorshipHow3Desc: "Actionable feedback and ongoing guidance so you keep progressing, not guessing.",
+
+    mentorshipCtaTitle: "Ready to take the next step in your career?",
+    mentorshipCtaText:
+      "Whether you're switching into Product, sharpening your BA skills, or preparing for your next role — let's talk about how I can help.",
+    mentorshipCtaSend: "Send a message",
+    mentorshipWhatsappMessage: "Hi Abdulrhman, I'm interested in a mentorship session.",
   },
   ar: {
     // Header
     navHome: "الرئيسية",
     navAbout: "من أنا",
     navServices: "الخدمات",
+    navMentorship: "الإرشاد المهني",
     navContact: "تواصل معي",
     navCV: "سيرتي الذاتية",
     contact: "تواصل معي",
@@ -299,8 +364,6 @@ const translations = {
     audience2Desc: "هيكلة العمليات، ضبط الأولويات، وبناء نموذج تشغيلي يدعم النمو المستدام.",
     audience3: "الشركات المتخصصة",
     audience3Desc: "خبرة عملية في التعامل مع المتطلبات التنظيمية في قطاعات مثل الحوكمة، التأمين، والبلوك تشين.",
-    audience4: "خريجون ومحترفون جدد",
-    audience4Desc: "تأهيل عملي، توجيه وظيفي، واستعداد حقيقي لدخول سوق العمل بثقة.",
     audience5: "المؤسسات الكبرى",
     audience5Desc: "دعم استراتيجي لإدارة التغيير، تحسين الأداء، وتمكين الفرق متعددة التخصصات.",
     
@@ -359,7 +422,9 @@ const translations = {
 
 	// Contact
 	contactTitle: "هل أنت مستعد لبناء منتج قوي؟",
-	contactSubtitle: "دعنا نناقش كيف يمكنني دعم رحلة منتجك، سواء كخبير تنفيذي، مرشد مهني، أو شريك في حل التحديات المعقّدة.",
+	contactSubtitlePrefix: "دعنا نناقش كيف يمكنني دعم رحلة منتجك، سواء كخبير تنفيذي أو شريك في حل التحديات المعقّدة. محتاج ",
+	contactSubtitleMentorshipLink: "توجيه فردي",
+	contactSubtitleSuffix: " بدل كده؟",
 	contactEmail: "Arhmetwally@outlook.com",
 	linkedinProfile: "ملفي على لينكدإن",
 	quote: "\"المنتجات الناجحة لا تُدار فقط، بل تُقاد برؤية واضحة وزخم مستمر.\"",
@@ -398,6 +463,69 @@ const translations = {
 	validationEmailInvalid: "من فضلك اكتب إيميل صحيح.",
 	validationServiceRequired: "من فضلك اختار محتاج مساعدة في إيه.",
 	validationMessageRequired: "من فضلك اكتب رسالة (10 حروف على الأقل).",
+
+	// Mentorship page (/mentorship)
+	mentorshipBadge: "لتطلعات مديري المنتجات ومحللي الأعمال",
+	mentorshipH1Prefix: "تعلّم إدارة المنتج وتحليل الأعمال من ",
+	mentorshipH1Highlight: "ممارس فعلي",
+	mentorshipH1Suffix: "، مش من كتاب",
+	mentorshipSubtitle:
+		"توجيه فردي وتدريب عملي لأي حد بيدخل مجال إدارة المنتجات وتحليل الأعمال أو بينمو فيه، بخبرة عملية تتجاوز 13 سنة في تسليم منتجات حقيقية في قطاعات معقدة.",
+	mentorshipCtaBook: "احجز جلسة إرشاد",
+	mentorshipCtaHow: "إزاي هيحصل ده",
+
+	mentorshipWhoTitle: "الخدمة دي لمين",
+	mentorshipWhoSubtitle: "دعم للأفراد في بداية رحلتهم في مجال المنتج أو تحليل الأعمال.",
+	mentorshipWho1Title: "بيغيّروا مجالهم",
+	mentorshipWho1Desc: "جايين من مجال تاني وعاوزين مسار واضح وواقعي للدخول في مجال المنتج أو تحليل الأعمال.",
+	mentorshipWho2Title: "مديري منتج / محللي أعمال جدد",
+	mentorshipWho2Desc: "شغالين في الدور بالفعل بس عاوزين يطوّروا مهاراتهم ويكبروا بثقة أكتر.",
+	mentorshipWho3Title: "الباحثين عن وظيفة",
+	mentorshipWho3Desc: "بيستعدوا لمقابلات شغل ومحتاجين فيدباك صريح على سيرتهم الذاتية ومدى جاهزيتهم.",
+
+	mentorshipGetTitle: "هتاخد إيه",
+	mentorshipGetSubtitle: "عملي، فردي، ومركّز على تجهيزك للدور — مش نظري لمجرد النظرية.",
+	mentorshipGet1Title: "إرشاد فردي وتأهيل",
+	mentorshipGet1Item1: "تأهيل عملي لدور مدير المنتج أو محلل الأعمال",
+	mentorshipGet1Item2: "صورة واضحة لشكل الشغل اليومي فعليًا",
+	mentorshipGet1Item3: "إجابات على أسئلة الكورسات مابتغطهاش",
+	mentorshipGet2Title: "السيرة الذاتية وجاهزية الدور",
+	mentorshipGet2Item1: "بناء سيرة ذاتية وتموضع مناسب لدور المنتج أو تحليل الأعمال",
+	mentorshipGet2Item2: "دعم لجاهزيتك قبل ما تتقدم للوظيفة",
+	mentorshipGet2Item3: "فيدباك شخصي على استراتيجيتك المهنية",
+	mentorshipGet3Title: "التوجه المهني في مجال التقنية",
+	mentorshipGet3Item1: "نصايح عملية للتنقل في المسار المهني بمجال التقنية",
+	mentorshipGet3Item2: "إزاي تختار بين الأدوار والفرق والمسارات",
+	mentorshipGet3Item3: "توجيه مبني على خبرة حقيقية في السوق",
+	mentorshipGet4Title: "محتوى ومصادر بالعربي",
+	mentorshipGet4Item1: "محتوى عملي في إدارة المنتج وتحليل الأعمال بالعربي — نادر في المنطقة",
+	mentorshipGet4Item2: "مقالات وتحليلات عملية تقدر تعتمد عليها",
+	mentorshipGet4Item3: "تعلّم من حد بيمارس المجال فعليًا، بلغتك",
+	mentorshipGet4Item4: "قوالب ونقاط بداية (قريبًا)",
+
+	mentorshipFollowTitle: "تابعني بين الجلسات",
+	mentorshipFollowText:
+		"بشارك محتوى عملي في إدارة المنتج وتحليل الأعمال بالعربي لناس بتبني مسارها المهني في التقنية. تابعني عشان تتعلم بشكل مستمر — وتواصل معايا لما تكون جاهز لتوجيه فردي.",
+	mentorshipFollowTag1: "إدارة المنتج",
+	mentorshipFollowTag2: "تحليل الأعمال",
+	mentorshipFollowTag3: "المسار المهني في التقنية",
+	mentorshipFollowTag4: "محتوى بالعربي",
+	mentorshipFollowCta: "شوف ملفي على لينكدإن",
+
+	mentorshipHowTitle: "إزاي هيحصل ده",
+	mentorshipHowSubtitle: "بسيط ومباشر، ومبني على وضعك الحالي.",
+	mentorshipHow1Title: "تواصل معايا",
+	mentorshipHow1Desc: "ابعتلي رسالة قصيرة عن وضعك الحالي وإيه اللي عاوز توصله.",
+	mentorshipHow2Title: "نحدد مسارك",
+	mentorshipHow2Desc: "جلسة مركّزة نحدد فيها نقاط الضعف والقوة عندك وأسرع خطوة جاية.",
+	mentorshipHow3Title: "تتقدم للأمام",
+	mentorshipHow3Desc: "فيدباك عملي وتوجيه مستمر عشان تفضل بتتقدم، مش بس بتخمّن.",
+
+	mentorshipCtaTitle: "جاهز تاخد الخطوة الجاية في مسارك المهني؟",
+	mentorshipCtaText:
+		"سواء بتتحول لمجال المنتج، بتطوّر مهاراتك في تحليل الأعمال، أو بتستعد لدورك الجاي — يلا نتكلم إزاي أقدر أساعدك.",
+	mentorshipCtaSend: "ابعت رسالة",
+	mentorshipWhatsappMessage: "مرحبًا عبدالرحمن، مهتم بجلسة إرشاد فردية.",
 
   }
 };

@@ -28,7 +28,7 @@ const { render } = await import(pathToFileURL(ssrEntryPath).href);
 
 // Bilingual pages: EN at the bare path, AR under "/ar" (see localizePath in
 // src/contexts/LanguageContext.tsx - keep both lists in sync with App.tsx).
-const bilingualPaths = ["/", "/about", "/cv", "/services", "/contact"];
+const bilingualPaths = ["/", "/about", "/cv", "/services", "/mentorship", "/contact"];
 const routes = [
   ...bilingualPaths.map((p) => ({
     url: p,

@@ -21,6 +21,7 @@ const Header = () => {
     { to: localizePath("/about", language), label: t("navAbout") },
     { to: localizePath("/cv", language), label: t("navCV") },
     { to: localizePath("/services", language), label: t("navServices") },
+    { to: localizePath("/mentorship", language), label: t("navMentorship") },
     { to: localizePath("/contact", language), label: t("navContact") },
   ];
 

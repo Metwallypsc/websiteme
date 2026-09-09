@@ -14,15 +14,16 @@ const Footer = () => {
     { to: localizePath("/about", language), label: t("navAbout") },
     { to: localizePath("/cv", language), label: t("navCV") },
     { to: localizePath("/services", language), label: t("navServices") },
+    { to: localizePath("/mentorship", language), label: t("navMentorship") },
     { to: localizePath("/contact", language), label: t("navContact") },
   ];
 
   const serviceLinks = [
-    t("footerService1"),
-    t("footerService2"),
-    t("footerService3"),
-    t("footerService4"),
-    t("footerService5"),
+    { label: t("footerService1"), to: localizePath("/services", language) },
+    { label: t("footerService2"), to: localizePath("/services", language) },
+    { label: t("footerService3"), to: localizePath("/services", language) },
+    { label: t("footerService4"), to: localizePath("/mentorship", language) },
+    { label: t("footerService5"), to: localizePath("/services", language) },
   ];
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -106,10 +107,10 @@ const Footer = () => {
               {t("footerServicesHeading")}
             </h4>
             <ul className="flex flex-col gap-3">
-              {serviceLinks.map((label) => (
-                <li key={label}>
-                  <Link to={localizePath("/services", language)} className="text-slate-300 text-sm hover:text-white transition-colors">
-                    {label}
+              {serviceLinks.map((service) => (
+                <li key={service.label}>
+                  <Link to={service.to} className="text-slate-300 text-sm hover:text-white transition-colors">
+                    {service.label}
                   </Link>
                 </li>
               ))}

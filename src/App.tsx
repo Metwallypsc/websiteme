@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import ServicesPage from "./pages/ServicesPage";
+import MentorshipPage from "./pages/MentorshipPage";
 import ContactPage from "./pages/ContactPage";
 import CVPage from "./pages/CVPage";
 import NotFound from "./pages/NotFound";
@@ -25,6 +26,7 @@ const AppRoutes = () => (
       <Route path="/about" element={<About />} />
       <Route path="/cv" element={<CVPage />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/mentorship" element={<MentorshipPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
@@ -34,6 +36,7 @@ const AppRoutes = () => (
       <Route path="about" element={<About />} />
       <Route path="cv" element={<CVPage />} />
       <Route path="services" element={<ServicesPage />} />
+      <Route path="mentorship" element={<MentorshipPage />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>

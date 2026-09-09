@@ -63,6 +63,11 @@ const PAGES = [
     ar: { title: "خدمات إدارة المنتجات وتحليل الأعمال", tagline: "إدارة منتج بدوام جزئي، تحليل أعمال، وبناء فرق" },
   },
   {
+    slug: "mentorship",
+    en: { title: "Mentorship & Coaching for Aspiring PMs & BAs", tagline: "1:1 guidance from a practitioner, not a textbook" },
+    ar: { title: "إرشاد مهني لمديري المنتج ومحللي الأعمال", tagline: "توجيه فردي من ممارس فعلي، مش من كتاب" },
+  },
+  {
     slug: "contact",
     en: { title: "Let's Build Something Meaningful", tagline: "Book a call or send a message to get started" },
     ar: { title: "لنبنِ شيئًا ذا معنى", tagline: "احجز مكالمة أو ابعت رسالة عشان نبدأ" },

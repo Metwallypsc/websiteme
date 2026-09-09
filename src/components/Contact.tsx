@@ -14,7 +14,14 @@ const Contact = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-white">{t('contactTitle')}</h2>
           </div>
           <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-            {t('contactSubtitle')}
+            {t('contactSubtitlePrefix')}
+            <Link
+              to={localizePath("/mentorship", language)}
+              className="text-white underline underline-offset-2 hover:text-white/80 transition-colors"
+            >
+              {t('contactSubtitleMentorshipLink')}
+            </Link>
+            {t('contactSubtitleSuffix')}
           </p>
         </div>
 

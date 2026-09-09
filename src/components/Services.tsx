@@ -11,10 +11,17 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const Services = () => {
+interface ServicesProps {
+  // The standalone /services page lists every commercial + mentorship
+  // offering; the Home page focuses only on the 4 B2B services and links
+  // mentorship out to its own dedicated page instead - see /mentorship.
+  hideMentorship?: boolean;
+}
+
+const Services = ({ hideMentorship = false }: ServicesProps) => {
   const { t } = useLanguage();
-  
-  const services = [
+
+  const allServices = [
     {
       icon: <Briefcase className="h-8 w-8 text-primary" />,
       title: t('service1Title'),
@@ -53,6 +60,7 @@ const Services = () => {
       icon: <UserCheck className="h-8 w-8 text-primary" />,
       title: t('service4Title'),
       subtitle: t('service4Subtitle'),
+      isMentorship: true,
       features: [
         t('service4Feature1'),
         t('service4Feature2'),
@@ -72,6 +80,8 @@ const Services = () => {
     }
   ];
 
+  const services = hideMentorship ? allServices.filter((s) => !s.isMentorship) : allServices;
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -84,7 +94,13 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div
+          className={
+            hideMentorship
+              ? "grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto"
+              : "grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          }
+        >
           {services.map((service, index) => (
             <Card 
               key={index} 
