@@ -1,6 +1,11 @@
 import { Resend } from "resend";
 
-const NOTIFY_EMAIL = "Arhmetwally@outlook.com";
+// Resend's account is unverified (no custom domain yet), so it can only
+// deliver to the account's own signup address - sending to Arhmetwally@
+// outlook.com gets rejected with "You can only send testing emails to
+// your own email address". Switch this back once a domain is verified at
+// resend.com/domains (see DEFAULT_FROM below).
+const NOTIFY_EMAIL = "abdo04590@gmail.com";
 // resend.dev requires no domain verification, so this ships working out of
 // the box - swap RESEND_FROM_EMAIL to an address on a verified domain
 // later for better deliverability/branding.
