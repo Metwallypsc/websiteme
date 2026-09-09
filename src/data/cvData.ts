@@ -64,7 +64,7 @@ export const CV_TEXT = {
     eduTitle: "Education",
     courseTitle: "Professional development",
     courseNote:
-      "No formal certifications completed — all items are self-study or online coursework (exams not taken). Not presented as certified.",
+      "No formal certifications completed — all items are self-study or online coursework.",
     coreTitle: "Core competencies",
     volTitle: "Volunteering",
     factsTitle: "Good to know",
@@ -93,7 +93,7 @@ export const CV_TEXT = {
     eduTitle: "التعليم",
     courseTitle: "التطوير المهني",
     courseNote:
-      "لا توجد شهادات معتمدة — كل البنود دراسة ذاتية أو كورسات أونلاين (بدون اجتياز امتحانات). لا تُعرض كشهادات معتمدة.",
+      "لا توجد شهادات معتمدة — كل البنود دراسة ذاتية أو كورسات أونلاين",
     coreTitle: "الكفاءات الأساسية",
     volTitle: "العمل التطوعي",
     factsTitle: "معلومات مهمة",

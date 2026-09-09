@@ -103,11 +103,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'gentle-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 0 0 rgba(34, 197, 94, 0.35)'
+					},
+					'50%': {
+						boxShadow: '0 0 0 10px rgba(34, 197, 94, 0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'gentle-pulse': 'gentle-pulse 2.5s ease-in-out infinite'
 			}
 		}
 	},

@@ -6,10 +6,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Mail, Linkedin, Github, Globe, Menu } from "lucide-react";
+import { Mail, Globe, Menu } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
 import { useLanguage, localizePath } from "@/contexts/LanguageContext";
-import { LINKEDIN_URL } from "@/data/structuredData";
 import BookCallButton from "@/components/BookCallButton";
 
 const Header = () => {
@@ -65,7 +64,7 @@ const Header = () => {
             <BookCallButton
               source="header"
               size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-blue-600 hover:bg-blue-700 text-white rtl:flex-row-reverse"
             />
 
             <Button
@@ -74,7 +73,7 @@ const Header = () => {
               size="sm"
               className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
             >
-              <Link to={localizePath("/contact", language)}>
+              <Link to={localizePath("/contact", language)} className="rtl:flex-row-reverse">
                 <Mail className="h-4 w-4" />
                 {t("contact")}
               </Link>
@@ -83,28 +82,8 @@ const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => window.open(LINKEDIN_URL, "_blank", "noopener,noreferrer")}
-              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
-            >
-              <Linkedin className="h-4 w-4" />
-              {t("linkedin")}
-            </Button>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open("https://github.com/Metwallypsc?tab=repositories", "_blank", "noopener,noreferrer")}
-              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
-            >
-              <Github className="h-4 w-4" />
-              {t("github")}
-            </Button>
-
-            <Button
-              variant="outline"
-              size="sm"
               onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex"
+              className="text-slate-600 hover:text-slate-900 hidden sm:inline-flex rtl:flex-row-reverse"
             >
               <Globe className="h-4 w-4" />
               {language === "en" ? "العربية" : "English"}
@@ -150,7 +129,7 @@ const Header = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-                    className="w-full justify-center text-slate-600 hover:text-slate-900"
+                    className="w-full justify-center text-slate-600 hover:text-slate-900 rtl:flex-row-reverse"
                   >
                     <Globe className="h-4 w-4" />
                     {language === "en" ? "العربية" : "English"}

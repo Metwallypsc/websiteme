@@ -44,9 +44,11 @@ const Hero = () => {
               className="bg-primary text-white hover:bg-primary/90 shadow-lg transition-all duration-300"
               onClick={handleGetStarted}
             >
-              <CalendarClock className="mr-2 h-5 w-5" />
-              {t('getStarted')}
-              <span className="ml-2">→</span>
+              <span className="inline-flex items-center gap-2 rtl:flex-row-reverse">
+                <CalendarClock className="h-5 w-5" />
+                {t('getStarted')}
+              </span>
+              <span className="ms-2">→</span>
             </Button>
             <Button
               variant="outline"
