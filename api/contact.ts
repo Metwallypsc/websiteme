@@ -23,7 +23,13 @@ const contactPayloadSchema = z.object({
   budgetTimeline: z.string().trim().max(200).optional().or(z.literal("")),
   message: z.string().trim().min(10).max(4000),
   website: z.string().max(0).optional().or(z.literal("")),
-  turnstileToken: z.string().min(1),
+  // Mirrors the client's requireCaptcha gate (src/lib/contactSchema.ts) and
+  // verifyTurnstileToken's own fail-open behavior below: only demand a
+  // non-empty token once TURNSTILE_SECRET_KEY is actually configured, so a
+  // deployment without Turnstile wired up yet doesn't reject every submission.
+  turnstileToken: process.env.TURNSTILE_SECRET_KEY
+    ? z.string().min(1)
+    : z.string().optional().or(z.literal("")),
 });
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -47,7 +53,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const remoteIp = (req.headers["x-forwarded-for"] as string | undefined)?.split(",")[0]?.trim();
-  const captchaOk = await verifyTurnstileToken(values.turnstileToken, remoteIp);
+  const captchaOk = await verifyTurnstileToken(values.turnstileToken ?? "", remoteIp);
   if (!captchaOk) {
     res.status(400).json({ error: "Captcha verification failed" });
     return;
