@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage, localizePath } from "@/contexts/LanguageContext";
-import { CV_STATS } from "@/data/cvData";
+import { CV_STATS, type CvStat } from "@/data/cvData";
 import { ArrowRight } from "lucide-react";
+
+const ABOUT_EXTRA_STATS: CvStat[] = [
+  {
+    n: "+50",
+    label: { en: "Products worked on & analyzed", ar: "منتج اشتغلت عليه وحللته" },
+    sub: { en: "", ar: "" },
+  },
+  {
+    n: "+100",
+    label: { en: "Software projects participated in", ar: "مشروع برمجي شاركت فيه" },
+    sub: { en: "", ar: "" },
+  },
+];
+
+const ABOUT_STATS: CvStat[] = [...CV_STATS, ...ABOUT_EXTRA_STATS];
 
 const About = () => {
   const { t, language } = useLanguage();
@@ -23,7 +38,7 @@ const About = () => {
           {t("aboutHighlightsTitle")}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
-          {CV_STATS.map((s, i) => (
+          {ABOUT_STATS.map((s, i) => (
             <div key={i} className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-5 text-center">
               <div className="text-2xl font-extrabold text-blue-600">{s.n}</div>
               <div className="mt-1 text-xs font-medium text-slate-600 leading-snug">

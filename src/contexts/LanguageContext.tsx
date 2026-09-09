@@ -280,7 +280,7 @@ const translations = {
     navHome: "الرئيسية",
     navAbout: "من أنا",
     navServices: "الخدمات",
-    navMentorship: "الإرشاد المهني",
+    navMentorship: "الإرشاد",
     navContact: "تواصل معي",
     navCV: "سيرتي الذاتية",
     contact: "تواصل معي",
